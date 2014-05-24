@@ -25,7 +25,7 @@ class ClimbersController < ApplicationController
 		@climber = Climber.find(params[:id])
 	end
 	def climb_params
-		params.required(:climber).permit(:name, :state)
+		params.required(:climber).permit(:name, :college, :year, :desc)
 	end
 	
 end

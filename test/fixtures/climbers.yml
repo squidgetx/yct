@@ -4,10 +4,10 @@ one:
   name: MyString
   college: MyString
   year: MyString
-  description: MyText
+  desc: MyText
 
 two:
   name: MyString
   college: MyString
   year: MyString
-  description: MyText
+  desc: MyText
