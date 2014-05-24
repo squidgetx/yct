@@ -1,5 +1,5 @@
 class ClimbersController < ApplicationController
-	before_action :find_climber, [:show, :edit, :destroy]
+	before_action :find_climber, only: [:show, :edit, :destroy]
 	
 	def index
 		@climbers = Climber.all
@@ -10,9 +10,12 @@ class ClimbersController < ApplicationController
 	def edit
 
 	end
+	def new
+	end
 	def create
 		@climber = Climber.create(climb_params)
 		redirect_to(@climber)
+		#render plain: params[:climber].inspect
 	end
 	def destroy
 	
