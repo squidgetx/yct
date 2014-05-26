@@ -16,7 +16,7 @@ class ClimbersController < ApplicationController
 	end
 	def new
 		@method = 'post'
-		@path = 'climbers_path'
+		@path = climbers_path
 	end
 	def create
 		@climber = Climber.create(climb_params)
