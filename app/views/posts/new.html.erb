@@ -1,0 +1,18 @@
+<%= form_for :post, url: @path, method: @method do |f| %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :title, :value => @oldTitle %>
+  </p>
+  <p>
+	<%= f.label :AuthorID %><br>
+	<%= f.text_field :climber_id, :value => @oldID %>
+  </p>
+  <p>
+    <%= f.label :Body %><br>
+    <%= f.text_area :text, :value => @oldText %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
