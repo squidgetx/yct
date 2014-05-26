@@ -2,5 +2,7 @@
 <h1> <%= @climber.name %> </h1>
 <p>
 <%= @climber.desc %> 
+<%= link_to 'Delete', @climber, method: :delete %>
+<%= link_to 'Edit', edit_climber_path(@climber) %>
 </p>
 this is the show page

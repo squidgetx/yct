@@ -1,12 +1,12 @@
-<%= form_for :climber, url: climbers_path do |f| %>
+<%= form_for :climber, url: @path, method: @method do |f| %>
   <p>
     <%= f.label :Name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :value => @oldName %>
   </p>
  
   <p>
     <%= f.label :Description %><br>
-    <%= f.text_area :desc %>
+    <%= f.text_area :desc, :value => @oldDesc %>
   </p>
  
   <p>

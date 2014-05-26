@@ -1,5 +1,5 @@
 class ClimbersController < ApplicationController
-	before_action :find_climber, only: [:show, :edit, :destroy]
+	before_action :find_climber, only: [:show, :edit, :destroy, :update]
 	
 	def index
 		@climbers = Climber.all
@@ -8,17 +8,27 @@ class ClimbersController < ApplicationController
 		
 	end
 	def edit
-
+		@oldDesc = @climber.desc
+		@oldName = @climber.name
+		@method = 'put'
+		@path = climber_path(@climber)
+		render "new"
 	end
 	def new
+		@method = 'post'
+		@path = 'climbers_path'
 	end
 	def create
 		@climber = Climber.create(climb_params)
 		redirect_to(@climber)
-		#render plain: params[:climber].inspect
+	end
+	def update
+		Climber.update(@climber.id, climb_params)
+		redirect_to(@climber)
 	end
 	def destroy
-	
+		@climber.destroy
+		redirect_to :action => 'index'
 	end
 	
 	def find_climber
