@@ -1,6 +1,6 @@
 
 <h1> <%= @climber.name %> </h1>
-<%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @climber.avatar.url(:medium) %>
 <p>
 <%= @climber.desc %> 
 <%= link_to 'Delete', @climber, method: :delete %>
