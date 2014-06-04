@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% unless session[:cas_user] %>
+<%= link_to("Login", CASClient::Frameworks::Rails::Filter.login_url(controller)) %>
+<% else %>
+Logout
+<% end %>
+<br />
 <%= yield %>
 
 </body>

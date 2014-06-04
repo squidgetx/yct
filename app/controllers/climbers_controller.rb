@@ -1,8 +1,15 @@
 class ClimbersController < ApplicationController
+	#require 'casclient'
+	#require 'casclient/frameworks/rails/filter'
+	before_filter CASClient::Frameworks::Rails::GatewayFilter
+
 	before_action :find_climber, only: [:show, :edit, :destroy, :update]
 	
 	def index
 		@climbers = Climber.all
+		if session[:cas_user]
+			@user = session[:cas_user]
+		end
 	end
 	def show
 		

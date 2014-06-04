@@ -31,10 +31,14 @@ gem 'spring',        group: :development
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "paperclip", "~> 4.1"
+
+gem 'rubycas-client', :git => "https://github.com/cthielen/rubycas-client"
+
+#gem 'rubycas-client-rails'
+#gem 'rubycas-client', '2.2.1'
