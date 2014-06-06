@@ -40,5 +40,4 @@ gem "paperclip", "~> 4.1"
 
 gem 'rubycas-client', :git => "https://github.com/cthielen/rubycas-client"
 
-#gem 'rubycas-client-rails'
-#gem 'rubycas-client', '2.2.1'
+gem 'kramdown'
