@@ -10,7 +10,7 @@
 <% unless session[:cas_user] %>
 <%= link_to("Login", CASClient::Frameworks::Rails::Filter.login_url(controller)) %>
 <% else %>
-
+<% #logout action needs to go here.. %>
 <% end %>
 <br />
 <%= yield %>
