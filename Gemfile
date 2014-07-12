@@ -23,8 +23,8 @@ gem 'rubycas-client', :git => "https://github.com/cthielen/rubycas-client"
 
 gem 'kramdown'
 
+gem 'rails_admin'
 group :development do
   gem 'pry-byebug'
-  gem 'rails-admin'
 end
 
