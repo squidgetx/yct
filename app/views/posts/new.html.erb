@@ -4,21 +4,21 @@
     <%= f.text_field :title, :value => @oldTitle %>
   </p>
   <p>
-	<%= f.label :AuthorID %><br>
-	<%= f.text_field :climber_id, :value => @oldID %>
+  <%= f.label :AuthorID %><br>
+  <%= f.text_field :climber_id, :value => @oldID %>
   </p>
-  
+
   <div id="toolbar">
-	<ul>
-		<li>Italics</li>
-		<li>Bold</li>
-		<li>Image</li>
-		<li>Link</li>
-	</ul>
+  <ul>
+    <li class = "italics">Italics</li>
+    <li class = "bold">Bold</li>
+    <li class = "image">Image</li>
+    <li class = "link">Link</li>
+  </ul>
   </div>
   <p>
     <%= f.label :Body %><br>
-    <%= f.text_area :text, :value => @oldText %>
+    <%= f.text_area :text, :value => @oldText, class: 'markdown_text_area'%>
   </p>
   <div id="gallery">
   </div>
