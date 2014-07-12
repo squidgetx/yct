@@ -1,7 +1,6 @@
-function insertMetaChars(start_tag, end_tag) {
+function insertMetaChars(start_tag, end_tag, input) {
   var double = arguments.length > 1;
-  var input = $('.markdown_text_area')[0];
-  var start = input.selectionStart;
+    var start = input.selectionStart;
   var end = input.selectionEnd;
   var old_text = input.value;
   input.value = old_text.substring(0, start) +
@@ -11,16 +10,21 @@ function insertMetaChars(start_tag, end_tag) {
 };
 
 $(document).ready(function() {
+  var input = $('.markdown_text_area')[0];
+
   $('.italics').click(function() {
-    insertMetaChars("*","*");
+    insertMetaChars("*","*",input);
   });
 
   $('.bold').click(function() {
-    insertMetaChars("**","**");
+    insertMetaChars("**","**",input);
   });
 
   $('.link').click(function() {
-    insertMetaChars("[","](<url here>)");
+    insertMetaChars("[","](<url here>)",input);
   });
 
+  $('.image-link').click(function() {
+    insertMetaChars("![](","<image url here>)",input);
+  });
 });
