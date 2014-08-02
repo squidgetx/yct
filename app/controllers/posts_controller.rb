@@ -33,9 +33,12 @@ class PostsController < ApplicationController
     redirect_to :action => 'index'
   end
 
+  private
+
   def find_post
     @post = Post.find(params[:id])
   end
+
   def post_params
     params.required(:post).permit(:title, :text)
   end
