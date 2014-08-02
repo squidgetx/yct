@@ -20,8 +20,8 @@ class PostsController < ApplicationController
   end
   def create
     p = post_params
-    p[:climber_id] = current_user
-    @post = Post.create(post_params)
+    p[:climber_id] = current_user.id
+    @post = Post.create(p)
     redirect_to(@post)
   end
   def update

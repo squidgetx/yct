@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    @current_user = Climber.find_by_netid(session[:cas_user])
+    @current_user ||= Climber.find_by_login(session[:cas_user])
   end
 
 
