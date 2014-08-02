@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Climber, type: model do
+describe Climber do
 
 
 

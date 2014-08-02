@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe ClimbersController, type: controller do
+describe ClimbersController do
 
 
 end

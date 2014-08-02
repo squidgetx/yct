@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe PostsController, type: controller do
+describe PostsController do
 
 
 end

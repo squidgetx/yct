@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Photo, type: model do
+describe Photo do
 
 
 
