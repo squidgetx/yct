@@ -24,7 +24,9 @@ gem 'cancancan'
 gem 'kramdown'
 
 gem 'rails_admin'
-group :development do
+group :development, :test do
   gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl'
 end
 

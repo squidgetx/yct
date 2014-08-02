@@ -54,8 +54,11 @@ GEM
     coffee-script-source (1.7.0)
     columnize (0.8.9)
     debugger-linecache (1.2.0)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     haml (4.0.5)
@@ -141,6 +144,22 @@ GEM
       json (~> 1.4)
     ref (1.0.5)
     remotipart (1.2.1)
+    rspec-core (3.0.3)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-mocks (3.0.3)
+      rspec-support (~> 3.0.0)
+    rspec-rails (3.0.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.3)
     safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -185,6 +204,7 @@ PLATFORMS
 DEPENDENCIES
   cancancan
   coffee-rails (~> 4.0.0)
+  factory_girl
   jbuilder (~> 2.0)
   jquery-rails
   kramdown
@@ -193,6 +213,7 @@ DEPENDENCIES
   pry-byebug
   rails (= 4.1.0)
   rails_admin
+  rspec-rails
   rubycas-client!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
