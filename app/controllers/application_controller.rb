@@ -12,10 +12,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= Climber.find_by_login(session[:cas_user])
-    if @current_user.nil?
-      return Climber.guest
-    end
-    @current_user
   end
 
 
