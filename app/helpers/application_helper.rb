@@ -9,5 +9,15 @@ module ApplicationHelper
     doc.to_html.html_safe
   end
 
+  def tooltip_icon fastring, tooltip_text
+    # take a string for font awesome icon classes
+    # and returns html for that string with a tooltip text
+    link_to "<i class='#{fastring}'></i>".html_safe, "#", title: "#{tooltip_text}"
+  end
+
+  def icon fastring
+    "<i class='#{fastring}'></i>".html_safe
+  end
+
 
 end

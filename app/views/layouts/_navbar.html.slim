@@ -5,10 +5,15 @@
 nav.menu.push-menu-left
   ul
     li
-      = link_to "Climbers", climbers_path
+      = link_to embedded_svg("logo.svg", class: 'logo'), root_path
     li
-      = link_to "Archive", posts_path
+      - unless current_user.id.nil?
+        = link_to "Hello, #{current_user.name}", climber_path(current_user)
     li
-      = link_to "About", "/about/"
+      = link_to icon('fa fa-user fa-2x'), climbers_path, title: 'Climbers', class: 'tooltip'
+    li
+      = link_to icon('fa fa-file-text fa-2x'), posts_path, title: 'Archives', class: 'tooltip'
+    li
+      = link_to icon('fa fa-question fa-2x'), '/about', title: 'About', class: 'tooltip'
 
 

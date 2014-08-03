@@ -10,7 +10,6 @@ $('document').ready( function() {
   });
 
   $('.nav-pull-btn').click(function() {
-    console.log('test');
     toggleMenu();
   });
 
