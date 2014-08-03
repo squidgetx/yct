@@ -14,4 +14,8 @@ $('document').ready( function() {
     toggleMenu();
   });
 
+  $('.push-menu-left').click(function() {
+    toggleMenu();
+  });
+
 });
