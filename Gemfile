@@ -27,6 +27,8 @@ gem 'rails_admin'
 
 gem 'slim'
 
+gem 'font-awesome-rails'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'

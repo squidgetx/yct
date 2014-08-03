@@ -3,9 +3,14 @@ var toggleMenu = function() {
   $('#mask').toggleClass('mask');
 };
 
-$('#mask').ready( function() {
+$('document').ready( function() {
 
   $('#mask').click(function() {
+    toggleMenu();
+  });
+
+  $('.nav-pull-btn').click(function() {
+    console.log('test');
     toggleMenu();
   });
 
