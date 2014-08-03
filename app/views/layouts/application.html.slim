@@ -10,4 +10,8 @@ html
     = csrf_meta_tags
   body
     = render partial: 'layouts/navbar'
-    = yield
+    #wrapper
+      = render partial: 'layouts/header'
+      = yield
+    #mask
+
