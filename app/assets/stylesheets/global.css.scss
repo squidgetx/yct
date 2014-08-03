@@ -1,3 +1,6 @@
+$baseMenuColor: #444;
+$textColor: #eee;
+
 body {
     overflow-x: hidden;
 }
@@ -31,24 +34,25 @@ body {
 
 .nav-pull-btn {
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 0;
   z-index: 19;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  color: #eee;
-  background-color: #444;
-  padding: 8px;
+  color: $textColor;
+  background-color: $baseMenuColor;
+  padding: 10px;
 }
 
 .nav-pull-btn:hover {
-  background-color: #666;
+  background-color: lighten($baseMenuColor, 20%);
+  cursor: pointer;
 }
 
 nav.menu {
   position: fixed;
   z-index: 20;
-  background-color: #67b5d1;
+  background-color: $baseMenuColor;
   overflow: hidden;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -63,38 +67,30 @@ nav.menu ul {
 }
 nav.push-menu-left {
     top: 0;
-    width: 300px;
+    width: 256px;
     height: 100%;
 }
 nav.push-menu-left li {
     display: block;
     text-align: center;
-    border-bottom: solid 1px #3184a1;
-    border-top: solid 1px #b5dbe9;
-}
-nav.push-menu-left li:first-child {
-    border-top: none
-}
-nav.push-menu-left li:last-child {
-    border-bottom: none
+    padding: 10px;
 }
 nav.push-menu-left a {
     display: block;
     padding: 10px;
     font-size: 18px;
+    color: $textColor;
+    text-decoration: none;
 }
-nav.push-menu-left button.close-menu {
-    margin: 10px 0;
-    padding: 10px 30px;
-    background-color: #3184a1;
-    color: #fff;
+nav.push-menu-left li:hover {
+  background-color: lighten($baseMenuColor, 20%);
 }
 nav.push-menu-left {
-    left: -300px
+    left: -256px
 }
 body.pml-open nav.push-menu-left {
     left: 0
 }
 body.pml-open #wrapper {
-    left: 300px
+    left: 256px
 }
