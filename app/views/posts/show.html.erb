@@ -1,9 +1,0 @@
-<% require 'kramdown' %>
-<h1> <%= @post.title %> </h1>
-<p>
-<%= raw Kramdown::Document.new(@post.text).to_html %> 
-<%= @post.climber_id %>
-<%= link_to 'Delete', @post, method: :delete %>
-<%= link_to 'Edit', edit_post_path(@post) %>
-</p>
-this is the show page

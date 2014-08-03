@@ -1,9 +1,0 @@
-
-<h1> <%= @climber.name %> </h1>
-<%= image_tag @climber.avatar.url(:medium) %>
-<p>
-<%= @climber.desc %> 
-<%= link_to 'Delete', @climber, method: :delete %>
-<%= link_to 'Edit', edit_climber_path(@climber) %>
-</p>
-this is the show page

@@ -1,0 +1,20 @@
+.promo
+    /.row
+    .pure-g
+      .pure-u-1-3
+      .pure-u-1-3
+        = embedded_svg('logo.svg', class:'logo')
+      .pure-u-1-3
+    /.row.navbar
+    .pure-g.navbar
+       /.c11.first
+       /.c1.last
+       .pure-u-2-3
+       .pure-u-1-3
+         - unless session[:cas_user]
+           = link_to "Login", CASClient::Frameworks::Rails::Filter.login_url(controller), class: "btn"
+         - else
+           - #logout action needs to go here..
+           = link_to("Logout", root_path)
+
+

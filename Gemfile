@@ -24,6 +24,9 @@ gem 'cancancan'
 gem 'kramdown'
 
 gem 'rails_admin'
+
+gem 'slim'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
