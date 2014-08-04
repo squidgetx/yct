@@ -1,9 +1,1 @@
-table
-  - @climbers.each do |c|
-    tr
-      td
-        = c.name
-      td
-        = c.desc
-      td
-= @user
+= render partial: 'climber_card', collection: @climbers

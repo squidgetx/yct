@@ -1,8 +1,16 @@
-h1
-  = @climber.name
-= image_tag @climber.avatar.url(:medium)
-p
-  = @climber.desc
-  = link_to 'Delete', @climber, method: :delete
-  = link_to 'Edit', edit_climber_path(@climber)
-|  this is the show page 
+.pure-g
+  .pure-u-1-5
+  .pure-u-1-5
+    = image_tag @climber.avatar.url(:medium)
+  .pure-u-3-5
+    p.heading
+      = @climber.name
+.pure-g
+  .pure-u-1-5
+  .pure-u-1-5
+    p
+      = @climber.desc
+.pure-g
+  .pure-u-2-5
+    = link_to 'Delete', @climber, method: :delete
+    = link_to 'Edit', edit_climber_path(@climber)
