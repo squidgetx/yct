@@ -1,13 +1,1 @@
-- index = 0
-- while true
-  - single = rand < 0.5
-  .pure-g
-    - if single || index + 1 == @posts.count
-      = render partial: 'post_card', locals: {post: @posts[index], size_class: 'pure-u-1' }
-    - else
-      - style_array = rand < 0.5 ? ['pure-u-2-5','pure-u-3-5'] : ['pure-u-3-5', 'pure-u-2-5']
-      = render partial: 'post_card', locals: {post: @posts[index], size_class: style_array[0] }
-      - index += 1
-      = render partial: 'post_card', locals: {post: @posts[index], size_class: style_array[1] }
-  - index += 1
-  - break if index >= @posts.count
+= render partial: 'post_card', collection: @posts

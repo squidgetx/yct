@@ -1,12 +1,13 @@
-$textColor: #040404;
+$textColor: #eee;
 
 p.heading {
   font-size: 24px;
   margin-bottom: 0px;
+  color: $textColor;
 }
 
 p.subheading {
   font-size: 14px;
-  color: lighten($textColor, 50%);
+  color: darken($textColor, 50%);
   margin-top: 4px;
 }
