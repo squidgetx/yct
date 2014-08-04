@@ -1,0 +1,16 @@
+$textColor: #eee;
+
+.post_card_container {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+
+.post_card.heading {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: $textColor;
+};

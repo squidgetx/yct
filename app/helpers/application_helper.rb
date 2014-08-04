@@ -9,10 +9,8 @@ module ApplicationHelper
     doc.to_html.html_safe
   end
 
-  def tooltip_icon fastring, tooltip_text
-    # take a string for font awesome icon classes
-    # and returns html for that string with a tooltip text
-    link_to "<i class='#{fastring}'></i>".html_safe, "#", title: "#{tooltip_text}"
+  def markdown md_string
+    raw Kramdown::Document.new(md_string).to_html
   end
 
   def icon fastring
