@@ -1,13 +1,15 @@
-$textColor: #eee;
 
+body {
+  color: $textColor;
+}
 p.heading {
   font-size: 24px;
   margin-bottom: 0px;
-  color: $textColor;
+  color: $headingColor;
 }
 
 p.subheading {
   font-size: 14px;
-  color: darken($textColor, 50%);
+  color: darken($headingColor, 50%);
   margin-top: 4px;
 }

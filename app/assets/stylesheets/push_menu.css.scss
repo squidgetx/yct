@@ -1,7 +1,3 @@
-$baseMenuColor: #444;
-$textColor: #eee;
-$bodyBackground: #333;
-
 body {
     overflow-x: hidden;
     background-color: $bodyBackground;
@@ -56,7 +52,7 @@ body {
   z-index: 19;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  color: $textColor;
+  color: $menuTextColor;
   background-color: $baseMenuColor;
   padding: 10px;
 }
@@ -64,6 +60,10 @@ body {
 .nav-pull-btn:hover {
   background-color: lighten($baseMenuColor, 20%);
   cursor: pointer;
+}
+
+nav {
+  color: $menuTextColor;
 }
 
 nav.menu {
@@ -95,8 +95,10 @@ nav.push-menu-left a {
     display: block;
     padding: 10px;
     font-size: 18px;
-    color: $textColor;
     text-decoration: none;
+    color: $menuTextColor;
+
+
 }
 nav.push-menu-left li:hover {
   background-color: lighten($baseMenuColor, 20%);
@@ -117,14 +119,12 @@ body.pml-open #wrapper {
 }
 
 .tooltip:hover {
-    color: $textColor;
     text-decoration: none;
 }
 
 .tooltip:hover:after {
     background: rgba(0,0,0,.8);
     border-radius: .5em;
-    color: $textColor;
     content: attr(title);
     display: block;
     padding: .3em 1em;
