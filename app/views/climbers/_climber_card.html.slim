@@ -1,10 +1,9 @@
-.pure-u-1-5.climber_card
-  .pure-g
-    .pure-u-1
-      p.subheading
-        = climber_card.name
-    .pure-u-1
-        = image_tag climber_card.avatar.url(:thumb)
-    .pure-u-1
-        = climber_card.desc
+= content_tag :div, class: 'climber_card',
+    style: "background-image: url('#{climber_card.avatar.url(:medium)}')" do
+  a href = url_for(climber_card)
+    span.link_cover
+
+  p.climber_card_title
+     = climber_card.name
+     - #link_to (image_tag climber_card.avatar.url(:medium)), climber_path(climber_card)
 
