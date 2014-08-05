@@ -4,7 +4,7 @@
       p.subheading
         = climber_card.name
     .pure-u-1
-        = image_tag climber_card.avatar(:thumbnail)
+        = image_tag climber_card.avatar.url(:thumb)
     .pure-u-1
         = climber_card.desc
 
