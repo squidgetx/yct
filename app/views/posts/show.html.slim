@@ -1,5 +1,6 @@
 p.heading
   = @post.title
+= link_to icon('nav-link fa fa-pencil fa-2x'), edit_post_path(@post)
 p.subheading
   == "Posted by #{link_to @post.climber.name, climber_path(@post.climber)} on #{@post.created_at.to_date.to_s(:long)}"
 = markdown @post.text
