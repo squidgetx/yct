@@ -1,6 +1,5 @@
-.card_container.card-left.pure-u-2-5
-  = post_card.title
-.card_container.card-right.pure-u-3-5
-  = post_card.title
-.card_container.pure-u-1.card-whole
-  = post_card.title
+.post_card
+  p.heading
+    = post_card.title
+  p.text
+    = post_card.text[0..99]

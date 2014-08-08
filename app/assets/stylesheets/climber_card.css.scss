@@ -1,8 +1,19 @@
+.content {
+}
+
 .climber_card {
-  position: relative;
-  height: 400px;
-  width: 100px;
   display: inline-block;
+  width: 50%;
+  height: 20em;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.climber_card_img {
+  display: inline-block;
+  position: relative;
+  width: 10em;
+  height: 15em;
   background-size: cover;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -12,21 +23,13 @@
   color: $menuTextColor;
   font-variant: small-caps;
   letter-spacing: 3px;
-
 }
-
-.climber_card:hover {
-  width: 200px;
-  }
 
 p.climber_card_title {
   letter-spacing: 3px;
-  position: absolute;
-  right: 100%;
   font-size: 18px;
   font-variant: small-caps;
-  text-align: right;
-  opacity: 0;
+  color: #111;
 }
 
 .link_cover {
