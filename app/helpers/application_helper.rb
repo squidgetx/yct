@@ -17,5 +17,4 @@ module ApplicationHelper
     "<i class='#{fastring}'></i>".html_safe
   end
 
-
 end
