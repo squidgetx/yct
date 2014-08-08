@@ -1,25 +1,26 @@
-.c1.first
-.c11.last
-  = form_for :post, url: @path, method: @method do |f|
-    p
-      = f.label :Title
-      br
-      = f.text_field :title, :value => @oldTitle
-    #toolbar
-      ul
-        li.italics
-          | Italics
-        li.bold
-          | Bold
-        li.image-link
-          | Image
-        li.link
-          | Link
-    p
-      = f.label :Body
-      br
-      = f.text_area :text, :value => @oldText, class: 'markdown_text_area'
-    #gallery
+= form_for :post, url: @path, method: @method do |f|
+  p
+    = f.label :Title
+    br
+    = f.text_field :title, :value => @oldTitle
+  #toolbar
+    ul.toolbar
+      li.italics.tooltip title="Italics"
+        = icon 'fa fa-italic fa-lg'
+      li.bold.tooltip title="Bold"
+        = icon 'fa fa-bold fa-lg'
+      li.image-link.tooltip title="Image Link"
+        = icon 'fa fa-image fa-lg'
+      li.link.tooltip title="Hyperlink"
+        = icon 'fa fa-link fa-lg'
+      a href="https://daringfireball.net/projects/markdown/basics"target="_blank"
+        li.help.tooltip title="Help"
+          = icon('fa fa-question fa-lg')
+  p
+    = f.label :Body
+    br
+    = f.text_area :text, :value => @oldText, class: 'markdown_text_area'
+  #gallery
 
-    p
-      = f.submit
+  p
+    = f.submit

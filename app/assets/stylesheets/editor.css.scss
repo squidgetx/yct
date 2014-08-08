@@ -1,0 +1,22 @@
+#toolbar {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#toolbar ul {
+  padding: 0px;
+}
+
+#toolbar li {
+  display: inline-block;
+  width: 2em;
+  text-align: center;
+  padding: 0.25em;
+  background-color: $baseMenuColor;
+  cursor: pointer;
+}
+
+#toolbar li:hover {
+  background-color: darken($baseMenuColor, 15%);
+}

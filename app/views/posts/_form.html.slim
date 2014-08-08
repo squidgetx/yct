@@ -1,0 +1,15 @@
+= simple_form_for @post do |f|
+  = f.input :title
+  #toolbar
+    ul
+      li.italics
+        | Italics
+      li.bold
+        | Bold
+      li.image-link
+        | Image
+      li.link
+        | Link
+
+  = f.input :text, class: 'markdown_text_area'
+  = f.button :submit
