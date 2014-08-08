@@ -6,7 +6,9 @@ class Ability
       when 'admin'
         can :manage, :all
       when 'moderator'
-      when 'member'
+        can [:edit, :create], Post
+      when 'member' || 'moderator'
+        can [:read], Post
     end
   end
 end

@@ -1,6 +1,7 @@
 .header
-  a.nav-link href = new_post_path
-     = icon 'fa fa-plus fa-2x'
+  - if can? :create, Post
+    a.nav-link href = new_post_path
+       = icon 'fa fa-plus fa-2x'
 
 .content_wrapper
   = render partial: 'post_card', collection: @posts
