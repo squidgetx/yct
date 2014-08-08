@@ -24,7 +24,7 @@ gem 'cancancan'
 gem 'kramdown'
 
 gem 'rails_admin'
-
+gem 'simple_form'
 gem 'slim'
 
 gem 'font-awesome-rails'

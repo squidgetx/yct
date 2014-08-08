@@ -9,15 +9,8 @@ class PostsController < ApplicationController
 
   end
   def edit
-    @oldDesc = @post.text
-    @oldName = @post.title
-    @method = 'put'
-    @path = post_path(@post)
-    render "new"
   end
   def new
-    @method = 'post'
-    @path = posts_path
   end
   def create
     p = post_params

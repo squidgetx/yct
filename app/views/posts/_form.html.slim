@@ -1,15 +1,18 @@
 = simple_form_for @post do |f|
   = f.input :title
   #toolbar
-    ul
-      li.italics
-        | Italics
-      li.bold
-        | Bold
-      li.image-link
-        | Image
-      li.link
-        | Link
+    ul.toolbar
+      li.italics.tooltip title="Italics"
+        = icon 'fa fa-italic fa-lg'
+      li.bold.tooltip title="Bold"
+        = icon 'fa fa-bold fa-lg'
+      li.image-link.tooltip title="Image Link"
+        = icon 'fa fa-image fa-lg'
+      li.link.tooltip title="Hyperlink"
+        = icon 'fa fa-link fa-lg'
+      a href="https://daringfireball.net/projects/markdown/basics"target="_blank"
+        li.help.tooltip title="Help"
+          = icon('fa fa-question fa-lg')
 
   = f.input :text, class: 'markdown_text_area'
   = f.button :submit
