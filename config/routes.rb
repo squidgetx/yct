@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'static_pages/about'
+  get 'static_pages/about', path: :about
 
-  get 'static_pages/contact'
+  get 'static_pages/contact', path: :contact
 
   resources :events
 
