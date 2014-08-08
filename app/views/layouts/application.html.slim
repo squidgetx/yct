@@ -11,6 +11,6 @@ html
   body
     = render partial: 'layouts/mobile_nav'
     #wrapper
-      = yield
-    #mask
-    = render partial: 'layouts/navbar'
+      #content
+        = yield
+      = render partial: 'layouts/navbar'

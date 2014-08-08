@@ -1,9 +1,26 @@
-$baseMenuColor: #efefef;
+$baseMenuColor: #eee;
 $textColor: #333;
 $menuTextColor: #222;
-$bodyBackground: #efefef;
+$bodyBackground: #f8f8f8;
 $headingColor: #222;
 $iconColor: #777;
+
+body {
+  background: $bodyBackground;
+}
+
+#wrapper {
+  position: absolute;
+  width: 100%;
+  top: 4em;
+  left: 0;
+}
+
+#content {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
 
 a {
   text-decoration: none;

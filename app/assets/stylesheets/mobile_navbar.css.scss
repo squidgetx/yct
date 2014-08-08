@@ -4,6 +4,7 @@
   left: 0;
   background-color: $baseMenuColor;
   width: 100%;
+  height: 4em;
   z-index: 20;
 }
 
@@ -14,9 +15,10 @@
 
 .icon {
   float: left;
-  padding: 1em;
-  stroke: $iconColor;
-  stroke-width: 12px;
-  width: 2em;
-  height: 2em;
+  stroke: $bodyBackground;
+  fill: $iconColor;
+  width: 3em;
+  height: 3em;
+  display: inline-block;
+  padding: 0.5em;
 }
