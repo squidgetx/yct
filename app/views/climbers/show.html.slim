@@ -2,10 +2,9 @@
 p.heading
   = best_in_place @climber, :name
 p.subheading
-  = best_in_place @climber, :year
+  = best_in_place @climber, :year, place_holder: '(graduation year)'
 p.subheading
   = best_in_place @climber, :role
 p.subheading
-  = best_in_place @climber, :desc, type: :textarea
+  = best_in_place @climber, :desc, type: :textarea, place_holder: '(description)'
 
-= link_to 'Delete', @climber, method: :delete
