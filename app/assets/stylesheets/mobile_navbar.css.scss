@@ -28,3 +28,109 @@
   display: inline-block;
   padding: 0.5em;
 }
+
+nav {
+  color: $menuTextColor;
+}
+
+nav.menu {
+  //position: fixed;
+  background-color: $baseMenuColor;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  font-variant: small-caps;
+}
+nav.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav.menu li {
+    padding: 1em;
+    height: 2em;
+}
+nav.menu a {
+    font-size: 18px;
+    text-decoration: none;
+    color: $menuTextColor;
+}
+nav.menu li:hover {
+  background-color: lighten($baseMenuColor, 20%);
+}
+
+.menu-label {
+  padding: 1em;
+}
+
+.tooltip {
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover {
+    text-decoration: none;
+}
+
+.tooltip:hover:after {
+    background: rgba(0,0,0,.8);
+    content: attr(title);
+    display: block;
+    padding: .3em 1em;
+    position: absolute;
+    left: 0px;
+    top: -2em;
+    text-shadow: 0 1px 0 #000;
+    white-space: pre;
+    z-index: 99;
+    color: #eee;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .logo {
+      stroke: $bodyBackground;
+      fill: $iconColor;
+      width: 2em;
+      height: 2em;
+    }
+
+    .mobile_nav {
+      display: none;
+    }
+
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+    }
+
+    nav.menu li {
+      display: inline-block;
+      width: 12em;
+      text-align: center;
+    }
+
+    .menu-label {
+      padding: 0.5em;
+    }
+
+    .user_profile {
+      float: right;
+    }
+
+    li#to_top {
+      display: none;
+    }
+
+    li#home {
+      padding: 0;
+      margin: 0;
+    }
+
+}

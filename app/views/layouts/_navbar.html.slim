@@ -1,18 +1,22 @@
 nav.menu#navbar
   ul
+    li#to_top
+      = link_to icon('fa fa-angle-up fa-lg', 'Top'), '#'
+    li#home
+      = link_to embedded_svg("logo2.svg", class: "logo"), root_path
     li
-      = link_to icon('fa fa-users fa-2x', 'Climbers'), climbers_path
+      = link_to icon('fa fa-users fa-lg', 'Climbers'), climbers_path
     li
-      = link_to icon('fa fa-calendar fa-2x', 'Events'), events_path
+      = link_to icon('fa fa-calendar fa-lg', 'Events'), events_path
     li
-      = link_to icon('fa fa-file-text fa-2x', 'Archives'), posts_path
+      = link_to icon('fa fa-file-text fa-lg', 'Archives'), posts_path
     li
-      = link_to icon('fa fa-question fa-2x', 'About'), '/about'
-    li
+      = link_to icon('fa fa-question fa-lg', 'About'), '/about'
+    li.user_profile
       - unless current_user.nil?
-        = link_to icon('fa fa-user fa-2x', 'Profile'), climber_path(current_user)
+        = link_to icon('fa fa-user fa-lg', 'Profile'), climber_path(current_user)
       - else
-        = link_to icon('fa fa-sign-in fa-2x','Log In'), CASClient::Frameworks::Rails::Filter.login_url(controller), data: { no_turbolink: true }
+        = link_to icon('fa fa-sign-in fa-lg','Log In'), CASClient::Frameworks::Rails::Filter.login_url(controller), data: { no_turbolink: true }
 
 
 
