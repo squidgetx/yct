@@ -3,10 +3,14 @@ $textColor: #333;
 $menuTextColor: #222;
 $bodyBackground: #efefef;
 $headingColor: #222;
-$iconColor: #444;
+$iconColor: #777;
 
 a {
   text-decoration: none;
   color: lighten($textColor, 20%);
+}
+
+.fa {
+  color: $iconColor;
 }
 

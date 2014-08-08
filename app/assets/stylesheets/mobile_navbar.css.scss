@@ -1,0 +1,22 @@
+.mobile_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $baseMenuColor;
+  width: 100%;
+  z-index: 20;
+}
+
+.nav-link {
+  float: right;
+  padding: 1em;
+}
+
+.icon {
+  float: left;
+  padding: 1em;
+  stroke: $iconColor;
+  stroke-width: 12px;
+  width: 2em;
+  height: 2em;
+}

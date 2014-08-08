@@ -1,30 +1,16 @@
-nav.menu
+nav.menu#navbar
   ul
     li
-      = link_to embedded_svg("logo.svg", class: 'icon'), root_path
-      span.menu-label
-        | Home
+      = link_to icon('fa fa-users fa-2x', 'Climbers'), climbers_path
     li
-      = link_to icon('fa fa-users fa-2x'), climbers_path, title: 'Climbers', class: 'tooltip'
-      span.menu-label
-        | Climbers
+      = link_to icon('fa fa-file-text fa-2x', 'Archives'), posts_path
     li
-      = link_to icon('fa fa-file-text fa-2x'), posts_path, title: 'Archives', class: 'tooltip'
-      span.menu-label
-        | Archives
-    li
-      = link_to icon('fa fa-question fa-2x'), '/about', title: 'About', class: 'tooltip'
-      span.menu-label
-        | About
+      = link_to icon('fa fa-question fa-2x', 'About'), '/about'
     li
       - unless current_user.nil?
-        = link_to icon('fa fa-user fa-2x'), climber_path(current_user), title: 'Profile', class: 'tooltip'
-        span.menu-label
-          | Profile
+        = link_to icon('fa fa-user fa-2x', 'Profile'), climber_path(current_user)
       - else
-        = link_to icon('fa fa-sign-in fa-2x'), CASClient::Frameworks::Rails::Filter.login_url(controller), title: 'Log in', class: 'tooltip', data: { no_turbolink: true }
-        span.menu-label
-          | Log In
+        = link_to icon('fa fa-sign-in fa-2x','Log In'), CASClient::Frameworks::Rails::Filter.login_url(controller), data: { no_turbolink: true }
 
 
 

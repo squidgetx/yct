@@ -13,8 +13,11 @@ module ApplicationHelper
     raw Kramdown::Document.new(md_string).to_html
   end
 
-  def icon fastring
-    "<i class='#{fastring}'></i>".html_safe
+  def icon fastring, i_label=""
+    i_string = "<i class='#{fastring}'></i>"
+    label_string = "<span class='menu-label'>#{i_label}</span>"
+    i_string += label_string unless i_label.blank?
+    i_string.html_safe
   end
 
   def truncate string, length
