@@ -5,6 +5,8 @@ class Climber < ActiveRecord::Base
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  validates :role, :name, :login, presence: true
+
   def self.guest
     # return a dummy climber
 
