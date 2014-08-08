@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/aaronchi/best_in_place.git
+  revision: 1152e2256afd485e66602833fd99d09d60994841
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
+GIT
   remote: https://github.com/cthielen/rubycas-client
   revision: 6dd1cfb9ce0138bc1a5fcd825893d2f5bf795908
   specs:
@@ -215,6 +223,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  best_in_place!
   cancancan
   coffee-rails (~> 4.0.0)
   factory_girl_rails

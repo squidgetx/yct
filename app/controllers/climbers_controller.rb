@@ -1,6 +1,8 @@
 class ClimbersController < ApplicationController
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
 
+  respond_to :html, :json
+
   def index
     @climbers = Climber.all
     if session[:cas_user]
@@ -27,7 +29,7 @@ class ClimbersController < ApplicationController
   end
   def update
     Climber.update(@climber.id, climb_params)
-    redirect_to(@climber)
+    respond_with @climber
   end
   def destroy
     @climber.destroy

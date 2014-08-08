@@ -1,8 +1,11 @@
-p.heading
-  = @climber.name
 = image_tag @climber.avatar.url(:medium)
+p.heading
+  = best_in_place @climber, :name
+p.subheading
+  = best_in_place @climber, :year
+p.subheading
+  = best_in_place @climber, :role
+p.subheading
+  = best_in_place @climber, :desc
 
-p
-  = @climber.desc
 = link_to 'Delete', @climber, method: :delete
-= link_to 'Edit', edit_climber_path(@climber)
