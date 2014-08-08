@@ -9,9 +9,8 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = render partial: 'layouts/navbar'
     #wrapper
       = render partial: 'layouts/header'
       = yield
     #mask
-
+    = render partial: 'layouts/navbar'

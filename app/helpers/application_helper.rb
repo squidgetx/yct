@@ -17,4 +17,13 @@ module ApplicationHelper
     "<i class='#{fastring}'></i>".html_safe
   end
 
+  def truncate string, length
+    if string.length <= length
+      return string
+    else
+      return string[0..length] + "..."
+    end
+
+  end
+
 end

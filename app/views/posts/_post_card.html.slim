@@ -1,5 +1,5 @@
 .post_card
   p.heading
-    = post_card.title
+    = link_to post_card.title, post_path(post_card)
   p.text
-    = post_card.text[0..99]
+    = truncate post_card.text, 155

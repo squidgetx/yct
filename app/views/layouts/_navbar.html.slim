@@ -1,22 +1,30 @@
-.nav-pull-btn
-  i.fa.fa-arrow-right.fa-2x
-
-
-nav.menu.push-menu-left
+nav.menu
   ul
     li
-      = link_to embedded_svg("logo.svg", class: 'logo'), root_path
+      = link_to embedded_svg("logo.svg", class: 'icon'), root_path
+      span.menu-label
+        | Home
     li
       = link_to icon('fa fa-users fa-2x'), climbers_path, title: 'Climbers', class: 'tooltip'
+      span.menu-label
+        | Climbers
     li
       = link_to icon('fa fa-file-text fa-2x'), posts_path, title: 'Archives', class: 'tooltip'
+      span.menu-label
+        | Archives
     li
       = link_to icon('fa fa-question fa-2x'), '/about', title: 'About', class: 'tooltip'
+      span.menu-label
+        | About
     li
       - unless current_user.nil?
         = link_to icon('fa fa-user fa-2x'), climber_path(current_user), title: 'Profile', class: 'tooltip'
+        span.menu-label
+          | Profile
       - else
         = link_to icon('fa fa-sign-in fa-2x'), CASClient::Frameworks::Rails::Filter.login_url(controller), title: 'Log in', class: 'tooltip', data: { no_turbolink: true }
+        span.menu-label
+          | Log In
 
 
 
