@@ -11,6 +11,12 @@
 .nav-link {
   float: right;
   padding: 1em;
+  display: inline-block;
+}
+
+.float-left {
+  float: left;
+  display: inline-block;
 }
 
 .icon {
