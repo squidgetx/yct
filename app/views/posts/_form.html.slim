@@ -14,5 +14,6 @@
         li.help.tooltip title="Help"
           = icon('fa fa-question fa-lg')
 
-  = f.input :text, class: 'markdown_text_area'
+  = f.text_area :text, class: 'markdown_text_area'
+  br
   = f.button :submit
