@@ -26,7 +26,7 @@ gem 'kramdown'
 gem 'rails_admin'
 gem 'simple_form'
 gem 'slim'
-gem 'best_in_place', :git => 'https://github.com/aaronchi/best_in_place.git'
+gem 'best_in_place', :git => 'https://github.com/bernat/best_in_place.git'
 gem 'font-awesome-rails'
 
 group :development, :test do

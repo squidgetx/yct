@@ -6,6 +6,6 @@ p.subheading
 p.subheading
   = best_in_place @climber, :role
 p.subheading
-  = best_in_place @climber, :desc
+  = best_in_place @climber, :desc, type: :textarea
 
 = link_to 'Delete', @climber, method: :delete

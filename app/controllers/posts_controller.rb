@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
   before_action :find_post, only: [:show, :edit, :destroy, :update]
+  respond_to :html, :json
 
   def index
     @posts = Post.all
@@ -20,7 +21,10 @@ class PostsController < ApplicationController
   end
   def update
     Post.update(@post.id, post_params)
-    redirect_to(@post)
+    respond_to do |format|
+      format.html { redirect_to (@post) }
+      format.json { respond_with_bip(@post) }
+    end
   end
   def destroy
     @post.destroy
