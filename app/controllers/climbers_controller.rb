@@ -34,6 +34,7 @@ class ClimbersController < ApplicationController
     # same code from new action, for people trying to hack in a post request
     @climber = Climber.new(climb_params)
     if @climber.save
+      pending.first.destroy
       redirect_to(@climber)
     else
       @email = pending.first.email unless pending.empty?
