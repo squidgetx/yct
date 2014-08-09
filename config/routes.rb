@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact', path: :contact
 
-  resources :events
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -19,8 +18,11 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :climbers
-    resources :posts
+  resources :climbers
+  resources :posts
+  resources :events
+
+  resources :pending_climbers, only: [:new, :create]
 
   # Example resource route with options:
   #   resources :products do

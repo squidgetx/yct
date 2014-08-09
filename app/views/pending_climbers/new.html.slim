@@ -1,0 +1,9 @@
+h2
+  | Invite
+h4
+  | From this page you can grant people the ability to create a new account via email. Please separate the email addresses with commas.
+
+= simple_form_for @pending_climber do |f|
+  = f.text_area :email, class: 'markdown_text_area'
+  br
+  = f.button :submit, 'Send invites'
