@@ -133,6 +133,16 @@ a:hover {
  * and Chrome.
  */
 
+h1,h2,h3,h4,h5,h6 {
+  color: $headingColor;
+  font-variant: small-caps;
+  font-weight: normal;
+}
+
+h4,h5,h6 {
+  color: darken($headingColor, 50%);
+}
+
 h1 {
     font-size: 2em;
     margin: 0.67em 0;

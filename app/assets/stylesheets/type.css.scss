@@ -2,16 +2,3 @@
 body {
   color: $textColor;
 }
-p.heading {
-  font-size: 24px;
-  margin-bottom: 0px;
-  color: $headingColor;
-  font-variant: small-caps;
-}
-
-p.subheading {
-  font-size: 14px;
-  color: darken($headingColor, 50%);
-  margin-top: 4px;
-  font-variant: small-caps;
-}
