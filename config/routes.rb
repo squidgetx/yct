@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'static_pages/about', path: :about
+  get 'static_pages/join', path: :join
 
   get 'static_pages/contact', path: :contact
 
