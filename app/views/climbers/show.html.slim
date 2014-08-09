@@ -1,10 +1,13 @@
 = image_tag @climber.avatar.url(:medium)
-p.heading
+h2
   = best_in_place @climber, :name
-p.subheading
+h4
   = best_in_place @climber, :year, place_holder: '(graduation year)'
-p.subheading
-  = best_in_place @climber, :role
-p.subheading
-  = best_in_place @climber, :desc, type: :textarea, place_holder: '(description)'
+h4
+  = best_in_place @climber, :title
+h4
+  = best_in_place @climber, :email
+p
+  = best_in_place @climber, :desc, as: :textarea, place_holder: '(description)'
+
 

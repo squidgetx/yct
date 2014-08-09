@@ -1,0 +1,52 @@
+
+body {
+  background: $bodyBackground;
+}
+
+#wrapper {
+  position: absolute;
+  width: 100%;
+  top: 4em;
+  left: 0;
+}
+
+#content {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: lighten($textColor, 20%);
+}
+
+.fa {
+  color: $iconColor;
+}
+
+.tooltip {
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover {
+    text-decoration: none;
+}
+
+.tooltip:hover:after {
+    background: rgba(0,0,0,.8);
+    content: attr(title);
+    display: block;
+    padding: .3em 1em;
+    position: absolute;
+    left: 0px;
+    top: -2em;
+    text-shadow: 0 1px 0 #000;
+    white-space: pre;
+    z-index: 99;
+    color: #eee;
+}
+
+
+

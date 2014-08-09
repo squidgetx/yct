@@ -13,13 +13,12 @@
  */
 
 @import "variables";
+@import "global";
 @import "type";
 @import "pure-release-0.5.0/*";
-@import "navbar";
-@import "post_card";
-@import "push_menu";
-@import "climber_card";
+@import "climbers/*";
+@import "posts/*";
 @import "mobile_navbar";
-@import "editor";
+@import "flash";
 
 

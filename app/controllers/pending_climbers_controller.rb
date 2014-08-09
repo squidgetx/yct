@@ -14,6 +14,7 @@ class PendingClimbersController < ApplicationController
       n = PendingClimber.create(attributes)
       PendingMailer.invite(n).deliver
     end
+    flash[:notice] = "Invitations sent successfully!"
     render :new
   end
 
