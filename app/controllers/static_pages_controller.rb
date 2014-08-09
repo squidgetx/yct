@@ -2,6 +2,6 @@ class StaticPagesController < ApplicationController
   def join
   end
 
-  def contact
+  def home
   end
 end
