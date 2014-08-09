@@ -1,4 +1,5 @@
 class ClimbersController < ApplicationController
+  before_action CASClient::Frameworks::Rails::Filter, only: [:new]
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
 
   respond_to :html, :json
