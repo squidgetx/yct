@@ -15,12 +15,15 @@ namespace :app do
         first_name = STDIN.gets.chomp
         puts 'Login (i.e. NetID, please double check that this is correct):'
         login = STDIN.gets.chomp
+        puts 'Email'
+        email = STDIN.gets.chomp
         ActiveRecord::Base.transaction do
           begin
             Climber.create! do |u|
               u.name = first_name
               u.login = login
               u.role = 'admin'
+              u.email = email
             end
           rescue Exception => e
             ActiveRecord::Rollback
