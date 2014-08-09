@@ -1,45 +1,7 @@
-.mobile_nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: $baseMenuColor;
-  width: 100%;
-  height: 4em;
-  z-index: 20;
-}
-
-nav.a:hover {
-  color: red;
-}
-
-.nav-link {
-  float: right;
-  padding: 1em;
-  display: inline-block;
-}
-
-.float-left {
-  float: left;
-  display: inline-block;
-}
-
-.icon {
-  float: left;
-  stroke: $bodyBackground;
-  fill: $iconColor;
-  width: 3em;
-  height: 3em;
-  display: inline-block;
-  padding: 0.5em;
-}
-
-nav {
+nav.menu {
   color: $menuTextColor;
   overflow: hidden;
-}
-
-nav.menu {
-  //position: fixed;
+  font-size: 18px;
   background-color: $baseMenuColor;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -47,15 +9,18 @@ nav.menu {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   font-variant: small-caps;
+  width: 100%;
 }
+
 nav.menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
 nav.menu li a {
+    position: relative;
     box-sizing: border-box;
-    font-size: 18px;
     text-decoration: none;
     line-height: 2px;
     color: $menuTextColor;
@@ -64,8 +29,42 @@ nav.menu li a {
     width: 100%;
     padding: 1em 0.5em;
 }
+
 nav.menu li:hover, nav.menu li:focus, nav.menu a:focus {
   background-color: lighten($baseMenuColor, 20%);
+}
+
+#mobile_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3em;
+  z-index: 20;
+}
+
+li.side-link {
+  float: right;
+}
+
+li.side-pull {
+  position: absolute;
+  right:0;
+  top:0;
+}
+
+li.home {
+  width: 3em;
+}
+
+.icon {
+  stroke: $bodyBackground;
+  fill: $iconColor;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2em;
+  width: 2em;
+  padding: 0.5em;
 }
 
 li#home {
@@ -78,16 +77,16 @@ li#home {
 
 @media only screen and (min-width: 768px) {
 
-    .mobile_nav {
+    #mobile_nav {
       display: none;
     }
 
-    nav {
+    #navbar {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
-      width: 100%;
+      z-index: 20;
+      height: 3em;
     }
 
     nav.menu li {
@@ -100,13 +99,8 @@ li#home {
       padding-left: 0.5em;
     }
 
-    .user_profile {
-      float: right;
+    li#home {
+      display: inline-block;
     }
-
-    li#to_top {
-      display: none;
-    }
-
 
 }

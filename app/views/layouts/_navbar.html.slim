@@ -1,10 +1,7 @@
 nav.menu#navbar
   ul
-    li#to_top
-      = link_to icon('fa fa-angle-up fa-lg', 'Top'), '#'
-    li#home
-      a#home_link href = root_path
-        = embedded_svg("logo2.svg", class: "icon")
+    li.home#home
+      = link_to embedded_svg("logo2.svg", class: "icon"), root_path
     li
       = link_to icon('fa fa-users fa-lg', 'Climbers'), climbers_path
     li
@@ -13,9 +10,9 @@ nav.menu#navbar
       = link_to icon('fa fa-file-text fa-lg', 'Archives'), posts_path
     li
       = link_to icon('fa fa-question fa-lg', 'About'), '/about'
-    li.user_profile
+    li.side-link
       - unless current_user.nil?
-        = link_to icon('fa fa-user fa-lg', 'Profile'), climber_path(current_user)
+        = link_to icon('fa fa-user fa-lg', "#{current_user.first_name}"), climber_path(current_user)
       - else
         = link_to icon('fa fa-sign-in fa-lg','Log In'), CASClient::Frameworks::Rails::Filter.login_url(controller), data: { no_turbolink: true }
 

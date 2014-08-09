@@ -1,3 +1,6 @@
-nav.mobile_nav
-  = link_to embedded_svg("logo2.svg", class: 'icon'), root_path
-  = link_to icon('fa fa-bars fa-2x menu'), '#navbar', class: 'nav-link to_nav'
+nav.menu#mobile_nav
+  ul
+    li.home
+      = link_to embedded_svg("logo2.svg", class: 'icon'), root_path
+    li.side-pull
+      = link_to icon('fa fa-bars fa-lg'), '#navbar'

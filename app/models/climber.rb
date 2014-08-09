@@ -14,4 +14,8 @@ class Climber < ActiveRecord::Base
       name: 'Guest'
     )
   end
+
+  def first_name
+    self.name.split(' ').first
+  end
 end
