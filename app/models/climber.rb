@@ -9,7 +9,6 @@ class Climber < ActiveRecord::Base
 
   def self.guest
     # return a dummy climber
-
     return Climber.new(
       name: 'Guest'
     )

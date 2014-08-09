@@ -8,7 +8,13 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
+    return nil if session[:cas_user].nil?
     @current_user ||= Climber.find_by_login(session[:cas_user])
+    if @current_user.nil?
+      return Climber.guest
+    end
+    @current_user
+
   end
 
 
