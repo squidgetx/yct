@@ -7,7 +7,7 @@ nav.menu#navbar
     li
       = link_to icon('fa fa-calendar fa-lg', 'Events'), events_path
     li
-      = link_to icon('fa fa-file-text fa-lg', 'Archives'), posts_path
+      = link_to icon('fa fa-file-text fa-lg', 'News'), posts_path
     - if current_user.nil? || current_user.id.nil?
       li
         = link_to icon('fa fa-plus fa-lg', 'Join'), '/join'
