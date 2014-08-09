@@ -1,0 +1,2 @@
+class PendingClimberController < ApplicationController
+end
