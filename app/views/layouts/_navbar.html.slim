@@ -3,11 +3,8 @@ nav.menu#navbar
     li#to_top
       = link_to icon('fa fa-angle-up fa-lg', 'Top'), '#'
     li#home
-      a href = root_path
-        = embedded_svg("logo2.svg", class: "logo")
-        span.menu-label
-          | Home
-
+      a#home_link href = root_path
+        = embedded_svg("logo2.svg", class: "icon")
     li
       = link_to icon('fa fa-users fa-lg', 'Climbers'), climbers_path
     li
