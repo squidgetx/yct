@@ -8,7 +8,7 @@ h2
   = f.input :email, input_html: {value: @email}
   = f.input :title, placeholder: 'Captain? President?'
   = f.input :role, as: :hidden, input_html: {value: 'normal'}
-  = hidden_field_tag :token, input_html: {value: @token}
+  = hidden_field_tag :token, @token
 
   = f.input :desc, as: :text, placeholder: 'Write something about yourself!', label: 'Bio'
   = f.label 'Avatar'

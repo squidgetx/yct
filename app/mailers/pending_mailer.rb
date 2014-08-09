@@ -4,7 +4,7 @@ class PendingMailer < ActionMailer::Base
   def invite(pending_climber)
     @pending_climber = pending_climber
     @url_options = {}
-    @url_options[:login] = pending_climber.token
+    @url_options[:token] = pending_climber.token
     mail(to: pending_climber.email, subject: "Welcome to YCTs new webapp!")
   end
 end

@@ -11,7 +11,7 @@ class PendingClimbersController < ApplicationController
     emails.each do |email|
       attributes = {email: email}
       attributes[:token] = SecureRandom.urlsafe_base64(42)
-      n = PendingClimber.create(p)
+      n = PendingClimber.create(attributes)
       PendingMailer.invite(n).deliver
     end
     render :new

@@ -4,6 +4,6 @@ h3
 h4
   | YCT has a sweet new webapp that you should make an account on.
 p
-  = root_path.to_s+@url_options.to_query
+  = link_to 'click here', new_climber_url+'?'+@url_options.to_query
 p
 
