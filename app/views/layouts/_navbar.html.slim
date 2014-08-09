@@ -8,8 +8,9 @@ nav.menu#navbar
       = link_to icon('fa fa-calendar fa-lg', 'Events'), events_path
     li
       = link_to icon('fa fa-file-text fa-lg', 'Archives'), posts_path
-    li
-      = link_to icon('fa fa-question fa-lg', 'About'), '/about'
+    - if current_user.nil?
+      li
+        = link_to icon('fa fa-plus fa-lg', 'Join'), '/join'
     li.side-link
       - unless current_user.nil?
         = link_to icon('fa fa-user fa-lg', "#{current_user.first_name}"), climber_path(current_user)
