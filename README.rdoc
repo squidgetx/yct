@@ -1,25 +1,17 @@
-Ruby 1.9.3p193
+Ruby 2.1.1
 Rails 4.1.0
+PostgreSQL
+ImageMagick
 
-YCT is an app for the Yale Climbing Team website
+YCT is an app for the Yale Climbing Team website. Name subject to change.
 
-Models:
+While currently it is an app aimed specifically for the Yale Climbing team I would like to keep it abstracted for use theoretically by any kind of undergraduate organization.
 
-Climber
-	Name
-	Picture
-	Description
-	
-Posts
-	Author (Climbers write posts)
+## Setup
 
-Images
-	Caption
-	Location?
-	Climbers (Image has_many climbers, but climbers can also have_many photos)
+Install rbenv, ruby, postgres-devel packages, imagemagick, and then run bundle. Set up a user postgres 'climb' with password 'black_diamond' for dev work. See postgresnotes.md for more details.
 
-Features
-markdown syntax for posts
-sexy front page index
-CAS authentication for users to edit their profiles and publish new posts
-interactive markdown editor for writing posts/uploading images
+`rake db:create` to create the db's
+`rake db:schema:load' to load the schema
+`rake app:setup` to create the first admin user
+`rake db:seed` to seed the db with some dummy data
