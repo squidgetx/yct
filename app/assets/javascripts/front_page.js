@@ -7,6 +7,26 @@ $(document).ready(function() {
   $('.slide').first().removeClass('inactive').addClass('active');
 
 
+   //Firefox
+  $('#slides').bind('DOMMouseScroll', function(e){
+     if (e.originalEvent.detail > 0) {
+       nextSlide();
+     } else {
+       prevSlide();
+     }
+     return false;
+  });
+
+  //IE, Opera, Safari
+  $('#slides').bind('mousewheel', function(e){
+     if (e.originalEvent.wheelDelta < 0) {
+       nextSlide();
+     } else {
+       prevSlide();
+     }
+     return false;
+   });
+
 });
 
 var nextSlide = function() {
