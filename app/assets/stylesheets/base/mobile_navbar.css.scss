@@ -42,9 +42,6 @@ nav.menu li:hover, nav.menu li:focus, nav.menu a:focus {
   z-index: 20;
 }
 
-li.side-link {
-  float: right;
-}
 
 li.side-pull {
   position: absolute;
@@ -76,6 +73,9 @@ li#home {
 }
 
 @media only screen and (min-width: 768px) {
+   li.side-link {
+      float: right;
+    }
 
     #mobile_nav {
       display: none;
