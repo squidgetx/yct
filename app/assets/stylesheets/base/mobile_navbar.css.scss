@@ -22,6 +22,7 @@ nav.menu li a {
     text-decoration: none;
     color: $menuTextColor;
     width: 100%;
+    height: 4em;
     padding: 1em 0.5em;
     //font-variant: small-caps;
     text-transform: uppercase;
@@ -42,15 +43,16 @@ nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3em;
+  height: 4em;
   z-index: 20;
 }
 
 
 li.side-pull {
-  position: absolute;
-  right:0;
-  top:0;
+  float: right;
+//  position: absolute;
+  //right:0;
+  //top:0;
 }
 
 li.home {
@@ -63,9 +65,10 @@ li.home {
   position: absolute;
   top: 0;
   left: 0;
-  height: 8em;
-  width: 8em;
+  height: 3em;
+  width: 3em;
   padding: 0.5em;
+  margin-top: 1em;
 }
 
 li#home {
@@ -77,6 +80,15 @@ li#home {
 }
 
 @media only screen and (min-width: 768px) {
+
+  .icon {
+    fill: $iconColor;
+    height: 8em;
+    width: 8em;
+    margin: 0;
+  }
+
+
    li#home {
       float: left;
       display: inline-block;
@@ -101,12 +113,10 @@ li#home {
     nav.menu li a {
       height: 10em;
       line-height: 7em;
-    }
-
-    nav.menu li {
       display: inline-block;
-      text-align: center;
       vertical-align: top;
+    }
+    nav.menu li {
       float: right;
     }
 
