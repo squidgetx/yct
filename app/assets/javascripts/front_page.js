@@ -11,15 +11,18 @@ $(document).ready(function() {
 
 var nextSlide = function() {
   var active = $('.active').first();
-  active.removeClass('active').addClass('inactive-left');
   var next = $('#' + (parseInt(active.attr('id')) + 1).toString() );
-  console.log(next.size());
-  if (next.size() == 0) {
-    next = $('#0');
-    console.log('next size was 0');
-    console.log(next.size());
-    console.log(next);
+  if (next.size() != 0) {
+    active.removeClass('active').addClass('inactive-left');
+    next.removeClass('inactive').addClass('active');
   }
-  next.removeClass('inactive').removeClass('inactive-left').addClass('active');
+}
 
+var prevSlide = function() {
+  var active = $('.active').first();
+  var prev = $('#' + (parseInt(active.attr('id')) - 1).toString() );
+  if (prev.size() != 0) {
+    active.removeClass('active').addClass('inactive');
+    prev.removeClass('inactive-left').addClass('active');
+  }
 }

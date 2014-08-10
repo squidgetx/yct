@@ -1,3 +1,8 @@
 .slide.inactive style = "background-image: url('#{image_path 'bg.jpg'}')"
-  h2
-    = slide.name
+  .heading_container
+    h3.slide_heading
+      = slide.name
+    h5.slide_subheading
+      /= slide.tagline
+      p
+        | Some longer explanation of the text
