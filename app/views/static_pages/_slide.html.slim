@@ -1,4 +1,4 @@
-.slide.inactive style = "background-image: url('#{image_path 'bg.jpg'}')"
+= content_tag :div, class: "slide #{(index == 0) ? 'active' : 'inactive'}", style: "background-image: url('#{image_path 'bg.jpg'}')"
   .heading_container
     a href = event_path(slide)
       h3.slide_heading

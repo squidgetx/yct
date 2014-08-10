@@ -6,13 +6,9 @@ $(document).ready(function() {
 
   });
 
-  //initialize first active
   $('.slide').each(function(index) {
     $(this).attr('id', index.toString());
   });
-
-  $('.slide').first().removeClass('inactive').addClass('active');
-
 
    //Firefox
   $('#slides').bind('DOMMouseScroll', function(e){

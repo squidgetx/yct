@@ -101,8 +101,8 @@ li.home {
 
   .icon {
     fill: $iconColor;
-    height: 5em;
-    width: 5em;
+    height: $smallNavHeight - 1em;
+    width: $smallNavHeight - 1em;
     margin: 0;
   }
 
@@ -122,13 +122,13 @@ li.home {
     top: 0;
     left: 0;
     z-index: 20;
-    height: 6em;
+    height: $smallNavHeight;
     width: 100%;
   }
 
   nav.menu li a {
-    height: 6em;
-    line-height: 4em;
+    height: $smallNavHeight;
+    line-height: $smallNavHeight - 2em;
     display: inline-block;
     vertical-align: top;
   }
@@ -143,17 +143,17 @@ li.home {
       background: -o-linear-gradient($baseMenuColor, $transparent);
       background: -moz-linear-gradient($baseMenuColor, $transparent);
       background: linear-gradient($baseMenuColor, $transparent);
-      height: 10em;
+      height: $largeNavHeight;
     }
 
     .icon {
-      height: 8em;
-      width: 8em;
+      height: $largeNavHeight  - 2em;
+      width: $largeNavHeight - 2em;
     }
 
     nav.menu li a {
-      height: 10em;
-      line-height: 7em;
+      height: $largeNavHeight;
+      line-height: $largeNavHeight - 3em;
     }
   }
 

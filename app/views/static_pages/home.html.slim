@@ -1,5 +1,8 @@
 #wrap
   #slides
-    = render partial: 'slide', collection: @events
+    - count = 0
+    - @events.each do |e|
+      = render partial: 'slide', locals: {index: count, slide: e}
+      - count += 1
 
 
