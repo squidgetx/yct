@@ -101,47 +101,60 @@ li.home {
 
   .icon {
     fill: $iconColor;
-    height: 8em;
-    width: 8em;
+    height: 5em;
+    width: 5em;
     margin: 0;
   }
 
 
-   li#home {
-      float: left;
-      display: inline-block;
-    }
+  li#home {
+    float: left;
+    display: inline-block;
+  }
 
-    #mobile_nav {
-      display: none;
-    }
+  #mobile_nav {
+    display: none;
+  }
 
+  #navbar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    height: 6em;
+    width: 100%;
+  }
+
+  nav.menu li a {
+    height: 6em;
+    line-height: 4em;
+    display: inline-block;
+    vertical-align: top;
+  }
+  nav.menu li {
+    float: right;
+  }
+
+  body.splash {
+    //front page navbar css
     #navbar {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 20;
-      height: 10em;
-      width: 100%;
       background: -webkit-linear-gradient($baseMenuColor, $transparent);
       background: -o-linear-gradient($baseMenuColor, $transparent);
       background: -moz-linear-gradient($baseMenuColor, $transparent);
       background: linear-gradient($baseMenuColor, $transparent);
+      height: 10em;
+    }
+
+    .icon {
+      height: 8em;
+      width: 8em;
     }
 
     nav.menu li a {
       height: 10em;
       line-height: 7em;
-      display: inline-block;
-      vertical-align: top;
     }
-    nav.menu li {
-      float: right;
-    }
-
-    .menu-label {
-      padding-left: 0.5em;
-    }
+  }
 
 }
