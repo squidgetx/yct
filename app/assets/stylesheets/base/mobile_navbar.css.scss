@@ -1,14 +1,12 @@
 nav.menu {
   color: $menuTextColor;
   overflow: hidden;
-  font-size: 18px;
   background-color: $baseMenuColor;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  font-variant: small-caps;
   width: 100%;
 }
 
@@ -22,16 +20,22 @@ nav.menu li a {
     position: relative;
     box-sizing: border-box;
     text-decoration: none;
-    line-height: 2px;
     color: $menuTextColor;
-    display: inline-block;
-    height: 3em;
     width: 100%;
     padding: 1em 0.5em;
+    //font-variant: small-caps;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
 }
 
-nav.menu li:hover, nav.menu li:focus, nav.menu a:focus {
-  background-color: lighten($baseMenuColor, 20%);
+nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
+  color: darken($menuTextColor, 10%);
+}
+
+.icon:hover {
+  stroke: darken($iconColor, 10%);
+  fill: darken($iconColor, 10%);
 }
 
 #mobile_nav {
@@ -54,13 +58,13 @@ li.home {
 }
 
 .icon {
-  stroke: $bodyBackground;
+  stroke: $iconColor;
   fill: $iconColor;
   position: absolute;
   top: 0;
   left: 0;
-  height: 2em;
-  width: 2em;
+  height: 8em;
+  width: 8em;
   padding: 0.5em;
 }
 
@@ -73,8 +77,9 @@ li#home {
 }
 
 @media only screen and (min-width: 768px) {
-   li.side-link {
-      float: right;
+   li#home {
+      float: left;
+      display: inline-block;
     }
 
     #mobile_nav {
@@ -86,21 +91,27 @@ li#home {
       top: 0;
       left: 0;
       z-index: 20;
-      height: 3em;
+      height: 10em;
+      background: -webkit-linear-gradient($baseMenuColor, $transparent);
+      background: -o-linear-gradient($baseMenuColor, $transparent);
+      background: -moz-linear-gradient($baseMenuColor, $transparent);
+      background: linear-gradient($baseMenuColor, $transparent);
+    }
+
+    nav.menu li a {
+      height: 10em;
+      line-height: 7em;
     }
 
     nav.menu li {
       display: inline-block;
       text-align: center;
       vertical-align: top;
+      float: right;
     }
 
     .menu-label {
       padding-left: 0.5em;
-    }
-
-    li#home {
-      display: inline-block;
     }
 
 }

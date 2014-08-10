@@ -1,7 +1,8 @@
-$baseMenuColor: #eee;
+$baseMenuColor: rgba(0,0,0,0.3);
+$transparent: rgba(0,0,0,0.01);
 $textColor: #333;
-$menuTextColor: #222;
+$menuTextColor: #fff;
 $bodyBackground: #f8f8f8;
 $headingColor: #222;
-$iconColor: #777;
+$iconColor: $menuTextColor;
 
