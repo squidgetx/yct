@@ -16,6 +16,10 @@ nav.menu ul {
   padding: 0;
 }
 
+#navbar a {
+  display: inline-block;
+}
+
 nav.menu li a {
     position: relative;
     box-sizing: border-box;
@@ -39,22 +43,6 @@ nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
   fill: darken($iconColor, 10%);
 }
 
-#mobile_nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4em;
-  z-index: 20;
-}
-
-
-li.side-pull {
-  float: right;
-//  position: absolute;
-  //right:0;
-  //top:0;
-}
-
 li.home {
   width: 3em;
 }
@@ -71,12 +59,42 @@ li.home {
   margin-top: 1em;
 }
 
-li#home {
-  display: none;
-}
+@media only screen and (max-width: 768px) {
 
-.menu-label {
-  padding-left: 1em;
+  #navbar {
+    z-index: 30;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  #navbar.hidden {
+    bottom: -15em;
+  }
+
+  #nav-link {
+    height: 4em;
+    padding-right: 1em;
+    float: right;
+  }
+
+  #nav-link:hover {
+    cursor: pointer;
+  }
+
+  #mobile_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4em;
+    width: 100%;
+    z-index: 20;
+  }
+
+  li#home {
+    display: none;
+  }
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -99,11 +117,13 @@ li#home {
     }
 
     #navbar {
+      display: block;
       position: fixed;
       top: 0;
       left: 0;
       z-index: 20;
       height: 10em;
+      width: 100%;
       background: -webkit-linear-gradient($baseMenuColor, $transparent);
       background: -o-linear-gradient($baseMenuColor, $transparent);
       background: -moz-linear-gradient($baseMenuColor, $transparent);

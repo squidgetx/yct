@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+  //mobile navbar
+  $('#nav-link').click(function() {
+    $('#navbar').toggleClass('hidden');
+
+  });
+
+  //initialize first active
   $('.slide').each(function(index) {
     $(this).attr('id', index.toString());
   });
