@@ -1,11 +1,13 @@
+
 nav.menu#navbar.hidden
   ul
-    li.home#home
-      = link_to embedded_svg("logo.svg", class: "icon"), root_path
     li
       = link_to 'Climbers', climbers_path
     li
       = link_to 'Events', events_path
+    li.home#home
+      = link_to embedded_svg("logo.svg", class: "icon"), root_path
+
     li
       = link_to 'News', posts_path
     - if current_user.nil? || current_user.id.nil?

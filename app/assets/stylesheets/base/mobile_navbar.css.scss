@@ -8,6 +8,7 @@ nav.menu {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   width: 100%;
+  text-align: center;
 }
 
 nav.menu ul {
@@ -108,8 +109,8 @@ li.home {
 
 
   li#home {
-    float: left;
     display: inline-block;
+    padding-right: 2em;
   }
 
   #mobile_nav {
@@ -126,14 +127,24 @@ li.home {
     width: 100%;
   }
 
+  nav.menu ul {
+    margin: auto;
+    display: inline-block;
+    //for centering
+  }
+
+
   nav.menu li a {
     height: $smallNavHeight;
     line-height: $smallNavHeight - 2em;
     display: inline-block;
     vertical-align: top;
+    padding-left: 2em;
+    padding-right: 2em;
   }
+
   nav.menu li {
-    float: right;
+    float: left;
   }
 
   body.splash {
@@ -154,7 +165,14 @@ li.home {
     nav.menu li a {
       height: $largeNavHeight;
       line-height: $largeNavHeight - 3em;
+         }
+
+    li#home {
+      width: $largeNavHeight;
+      padding-left: 1em;
+      padding-right: 0;
     }
+
   }
 
 }
