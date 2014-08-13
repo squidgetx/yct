@@ -10,27 +10,26 @@ $(document).ready(function() {
     $(this).attr('id', index.toString());
   });
 
-   //Firefox
-  $('#slides').bind('DOMMouseScroll', function(e){
-     if (e.originalEvent.detail > 0) {
-       nextSlide();
-     } else {
-       prevSlide();
-     }
-     return false;
-  });
 
-  //IE, Opera, Safari
-  $('#slides').bind('mousewheel', function(e){
-     if (e.originalEvent.wheelDelta < 0) {
-       nextSlide();
-     } else {
-       prevSlide();
-     }
-     return false;
-   });
+  $('#slides').bind('DOMMouseScroll mousewheel', handleScroll);
 
 });
+
+
+var handleScroll = function(e) {
+  if (e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) {
+    nextSlide();
+  } else {
+    prevSlide();
+  }
+  $('#slides').unbind('DOMMouseScroll');
+  $('#slides').unbind('mousewheel');
+  window.setTimeout(function() {
+    $('#slides').bind('DOMMouseScroll mousewheel', handleScroll);
+  },1400);
+  // the above value should be tweaked to taste
+  return false;
+}
 
 var nextSlide = function() {
   var active = $('.active').first();
