@@ -7,8 +7,8 @@ class Event < ActiveRecord::Base
 
   def get_range
     # Return human readable string of the event time
-    start_date = self.start_date.to_date.to_s(:long)
-    end_date = self.end_date.to_date.to_s(:long)
+    start_date = self.start_date.to_date.to_s(:short)
+    end_date = self.end_date.to_date.to_s(:short)
     start_time = Time.at(self.start_date).strftime('%R')
     end_time = Time.at(self.end_date).strftime('%R')
     if start_date == end_date

@@ -1,0 +1,7 @@
+= content_tag :div, class: 'event_card', style: "background-image: url('#{event_card.cover(:thumb)}')"
+  .heading_container
+    a href = event_path(event_card)
+      h2.slide_subheading
+        = event_card.name
+      h4.slide_subheading
+        = event_card.start_date.to_date.to_s(:long)

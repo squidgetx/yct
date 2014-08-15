@@ -4,5 +4,9 @@
     - @events.each do |e|
       = render partial: 'slide', locals: {index: count, slide: e}
       - count += 1
+    = content_tag :div, class: "slide inactive"
+      /posts index
+      p
+        | posts index!
 
 
