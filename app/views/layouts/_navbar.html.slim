@@ -18,6 +18,9 @@ nav.menu#navbar.hidden
         = link_to "Hi, #{current_user.first_name}", climber_path(current_user)
       - else
         = link_to icon('fa fa-sign-in fa-lg'), CASClient::Frameworks::Rails::Filter.login_url(controller), data: { no_turbolink: true }
-
+    li.search_form
+      a
+       = form_tag search_path, :method => :get, class: 'front_page' do
+         = text_field_tag :search, params[:search], placeholder: 'search'
 
 

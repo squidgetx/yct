@@ -17,5 +17,13 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def search
+    term = params[:search]
+    @climbers = Climber.basic_search(term).to_a
+    @posts = Post.basic_search(term).to_a
+    @events = Event.basic_search(term).to_a
+    render 'search/results'
+  end
+
 
 end

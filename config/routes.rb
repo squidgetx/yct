@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/home', path: :home
 
+  get 'search' => 'application#search', as: :search
+
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
