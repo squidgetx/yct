@@ -13,11 +13,11 @@
   height: 100%;
   background-size: cover;
   position:absolute;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all .8s;
+  -moz-transition: all .8s;
+  -ms-transition: all .8s;
+  -o-transition: all .8s;
+  transition: all .8s;
 }
 
 .slide.active {

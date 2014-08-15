@@ -22,6 +22,7 @@ gem "paperclip", "~> 4.1"
 gem 'rubycas-client', :git => "https://github.com/cthielen/rubycas-client"
 gem 'cancancan'
 gem 'kramdown'
+gem 'textacular'
 
 gem 'rails_admin'
 gem 'simple_form'
