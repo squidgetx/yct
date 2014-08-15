@@ -1,4 +1,8 @@
 class Event < ActiveRecord::Base
+
+  has_attached_file :cover, styles: {splash: '960x960', thumb: '256x256'}, default_url: "images/:style/missing.png"
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates :name, :start_date, :end_date, presence: true
 
   def get_range
