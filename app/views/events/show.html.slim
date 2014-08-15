@@ -1,5 +1,8 @@
-p#notice
-  = notice
+p.heading
+  = @event.name
+p.subheading
+  = @event.get_range
+p
+  = @event.description
+
 = link_to 'Edit', edit_event_path(@event)
-|  | 
-= link_to 'Back', events_path
