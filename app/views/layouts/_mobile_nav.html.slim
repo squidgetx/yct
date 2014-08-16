@@ -1,6 +1,14 @@
-nav.menu#mobile_nav
-  ul
-    li.home
-      = link_to embedded_svg("logo.svg", class: 'icon'), root_path
-    li.side-pull#nav-link
-      = icon('fa fa-bars fa-lg')
+.home.widget#mobile_home
+  = link_to embedded_svg("logo.svg", class: 'icon'), root_path
+.widget#nav-link
+  = icon('fa fa-bars fa-2x')
+.widget#user-link
+  - unless current_user.nil?
+    = link_to icon('fa fa-user fa-2x'), climber_path(current_user)
+  - else
+    = link_to icon('fa fa-sign-in fa-2x'), CASClient::Frameworks::Rails::Filter.login_url(controller), data: { no_turbolink: true }
+.widget#search-form
+   = form_tag search_path, :method => :get, class: 'front_page' do
+         = text_field_tag :search, params[:search], placeholder: 'search'
+
+

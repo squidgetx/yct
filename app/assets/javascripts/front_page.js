@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-  //mobile navbar
-  $('#nav-link').click(function() {
-    $('#navbar').toggleClass('hidden');
-
-  });
-
   $('.slide').each(function(index) {
     $(this).attr('id', index.toString());
   });

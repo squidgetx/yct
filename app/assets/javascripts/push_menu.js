@@ -1,20 +1,21 @@
 var toggleMenu = function() {
-  $('body').toggleClass('pml-open');
-  $('#mask').toggleClass('mask');
+  $('#navbar').toggleClass('hidden');
+  $('#nav-link').toggleClass('hidden');
 };
 
 $('document').ready( function() {
 
-  $('#mask').click(function() {
+  $('#wrapper').click(function() {
     toggleMenu();
   });
 
-  $('.nav-pull-btn').click(function() {
+  $('#navbar').click(function() {
     toggleMenu();
   });
 
-  $('.push-menu-left').click(function() {
+  $('#nav-link').click(function() {
     toggleMenu();
+
   });
 
 });

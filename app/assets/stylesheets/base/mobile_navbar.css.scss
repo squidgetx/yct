@@ -9,6 +9,7 @@ nav.menu {
   transition: all 0.3s;
   width: 100%;
   text-align: center;
+  font-size: 1.5em;
 }
 
 nav.menu ul {
@@ -17,29 +18,55 @@ nav.menu ul {
   padding: 0;
 }
 
+$navbar_width: 200px;
+
+#navbar {
+  position: fixed;
+  width: $navbar_width;
+  height: 100%;
+  top:0;
+}
+
+#navbar.hidden {
+  left: -$navbar_width;
+}
+
 #navbar a {
   display: inline-block;
 }
 
+nav.menu li a, .widget {
+  box-sizing: border-box;
+  color: $menuTextColor;
+  text-align: center;
+}
+
+.widget {
+  background-color: rgba(0,0,0,.3);
+  z-index: 30;
+  padding: .7em;
+}
+
+.widget.hidden {
+  display: none;
+}
+
 nav.menu li a {
     position: relative;
-    box-sizing: border-box;
     text-decoration: none;
-    color: $menuTextColor;
     width: 100%;
-    height: 4em;
-    padding: 1em 0.5em;
-    text-align: center;
     font-family: 'bebas_neueregular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 3em;
+    padding: 1em 0.5em;
 }
 
 nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
-  color: darken($menuTextColor, 10%);
+  color: darken($menuTextColor, 20%);
 }
 
 .icon:hover {
-  stroke: darken($iconColor, 10%);
-  fill: darken($iconColor, 10%);
+  stroke: darken($iconColor, 20%);
+  fill: darken($iconColor, 20%);
 }
 
 li.home {
@@ -52,10 +79,12 @@ li.home {
   position: absolute;
   top: 0;
   left: 0;
+  padding: 0.5em;
   height: 3em;
   width: 3em;
-  padding: 0.5em;
-  margin-top: 1em;
+  margin: auto;
+  display: inline-block;
+  padding-left: 3.4em;
 }
 
 .front_page input {
@@ -70,123 +99,55 @@ li.home {
 
 }
 
-@media only screen and (max-width: 768px) {
+#nav-link {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+}
 
-  #navbar {
-    z-index: 30;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-  }
+#user-link {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+}
 
-  #navbar.hidden {
-    bottom: -15em;
-  }
+#search-form {
+  position: absolute;
+  top: 2em;
+  right: 5em;
+  background: none;
 
-  #nav-link {
-    height: 4em;
-    padding-right: 1em;
-    float: right;
-  }
+}
 
-  #nav-link:hover {
-    cursor: pointer;
-  }
-
-  #mobile_nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4em;
-    width: 100%;
-    z-index: 20;
-  }
-
-  li#home {
-    display: none;
-  }
-
+.widget:hover {
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
 
-  .icon {
-    fill: $iconColor;
-    height: $smallNavHeight - 1em;
-    width: $smallNavHeight - 1em;
-    margin: 0;
-  }
-
-
-  li#home {
-    display: inline-block;
-    padding-right: 2em;
-  }
-
-  #mobile_nav {
+  #mobile_home {
     display: none;
   }
 
   #navbar {
-    display: block;
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 20;
-    height: $smallNavHeight;
+  }
+
+
+
+
+  li#home {
+    display: block;
     width: 100%;
+    padding-bottom: 1em;
+    padding-top: 0.5em;
   }
-
-  nav.menu ul {
-    margin: auto;
-    display: inline-block;
-    //for centering
-  }
-
 
   nav.menu li a {
-    height: $smallNavHeight;
-    line-height: $smallNavHeight - 2em;
-    display: inline-block;
-    vertical-align: top;
     padding-left: 2em;
     padding-right: 2em;
-  }
-
-  nav.menu li {
-    float: left;
-  }
-
-  li.search_form {
-    float: right;
-  }
-
-  body.splash {
-    //front page navbar css
-    #navbar {
-      background: -webkit-linear-gradient($baseMenuColor, $transparent);
-      background: -o-linear-gradient($baseMenuColor, $transparent);
-      background: -moz-linear-gradient($baseMenuColor, $transparent);
-      background: linear-gradient($baseMenuColor, $transparent);
-      height: $largeNavHeight;
-    }
-
-    .icon {
-      height: $largeNavHeight  - 2em;
-      width: $largeNavHeight - 2em;
-    }
-
-    nav.menu li a {
-      height: $largeNavHeight;
-      line-height: $largeNavHeight - 3em;
-         }
-
-    li#home {
-      width: $largeNavHeight;
-      padding-left: 1em;
-      padding-right: 0;
-    }
-
   }
 
 }
