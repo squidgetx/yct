@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-  $('.slide').each(function(index) {
-    $(this).attr('id', index.toString());
-  });
+ // $('.slide').each(function(index) {
+  //  $(this).attr('id', index.toString());
+  //});
 
 
-  $('#slides').bind('DOMMouseScroll mousewheel', handleScroll);
+  //$('#slides').bind('DOMMouseScroll mousewheel', handleScroll);
 
 });
 

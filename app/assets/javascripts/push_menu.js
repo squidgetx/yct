@@ -5,10 +5,6 @@ var toggleMenu = function() {
 
 $('document').ready( function() {
 
-  $('#wrapper').click(function() {
-    toggleMenu();
-  });
-
   $('#navbar').click(function() {
     toggleMenu();
   });

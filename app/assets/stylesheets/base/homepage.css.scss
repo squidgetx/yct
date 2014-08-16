@@ -1,18 +1,21 @@
+$overlayColor: rgba(0,0,0,0.3);
+
 
 #slides {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: -2px;
+  top: 0px;
   width: 100%;
   height: 100vh;
 }
 
 .slide {
-  width: 100%;
+  position: relative;
+  width: 20%;
   height: 100%;
   background-size: cover;
-  position:absolute;
+  display: inline-block;
   -webkit-transition: all .8s;
   -moz-transition: all .8s;
   -ms-transition: all .8s;
@@ -20,15 +23,11 @@
   transition: all .8s;
 }
 
-.slide.active {
-  left: 0;
-}
-
 .heading_container {
+  display: none;
   line-height: 1em;
   position: absolute;
   bottom: 20%;
-  width: 100%;
   background-color: rgba(0,0,0,0.5);
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -61,11 +60,41 @@
   text-align: right;
 }
 
-.slide.inactive {
-  left: 100%;
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  z-index: 28;
+  pointer-events: none;
 }
 
-.slide.inactive-left {
-  left: -100%;
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $overlayColor;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+
 }
 
+.slide-overlay:hover {
+  background-color: rgba(0,0,0,0);
+}
+
+.logo {
+  stroke: $iconColor;
+  fill: $iconColor;
+  display: inline-block;
+  margin: auto;
+  width: 40%;
+  height: 40%;
+}

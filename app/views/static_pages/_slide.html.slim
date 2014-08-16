@@ -1,4 +1,4 @@
-= content_tag :div, class: "slide #{(index == 0) ? 'active' : 'inactive'}", style: "background-image: url('#{slide.cover(:splash)}')"
+= content_tag :div, class: "slide", style: "background-image: url('#{slide.cover(:splash)}')"
   .heading_container
     a href = event_path(slide)
       h3.slide_heading
@@ -6,4 +6,4 @@
       h3.slide_subheading
         p
           = slide.description
-
+  .slide-overlay
