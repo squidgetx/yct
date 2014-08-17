@@ -27,6 +27,7 @@ $navbar_width: 200px;
   width: $navbar_width;
   height: 100%;
   top:0;
+  z-index: 36;
 }
 
 #navbar.hidden {
@@ -52,10 +53,16 @@ nav.menu li a, .widget {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.widget:hover, .widget:focus {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.5);
 
 }
 
 nav.menu li a {
+    box-sizing: border-box;
     position: relative;
     text-decoration: none;
     width: 100%;
@@ -64,8 +71,12 @@ nav.menu li a {
     padding: 1em 0.5em;
 }
 
+li#home a {
+  height: 4.5em;
+}
+
 nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
-  color: darken($menuTextColor, 20%);
+  background-color: lighten($baseMenuColor, 20%);
 }
 
 .icon:hover {
@@ -107,6 +118,7 @@ nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
 
 #nav-link.hidden {
   left: 24px + $navbar_width;
+  z-index: 36;
 }
 
 #user-link {
@@ -123,10 +135,6 @@ nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
 
 }
 
-.widget:hover {
-  cursor: pointer;
-}
-
 @media only screen and (min-width: 768px) {
 
   #mobile_home {
@@ -137,13 +145,6 @@ nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
     top: 0;
     left: 0;
     z-index: 20;
-  }
-
-  li#home {
-    display: block;
-    width: 100%;
-    padding-bottom: 1em;
-    padding-top: 0.5em;
   }
 
   nav.menu li a {

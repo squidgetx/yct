@@ -1,6 +1,8 @@
 class ClimbersController < ApplicationController
   before_action CASClient::Frameworks::Rails::Filter, only: [:new]
+  include ActionView::Helpers::AssetUrlHelper
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
+  before_action :set_cover
 
   respond_to :html, :json
 
@@ -59,6 +61,10 @@ class ClimbersController < ApplicationController
 
   def find_climber
     @climber = Climber.find(params[:id])
+  end
+
+  def set_cover
+    @cover = 'assets/climbers.jpg'
   end
 
   def climb_params
