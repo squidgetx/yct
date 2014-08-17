@@ -15,12 +15,9 @@ $navbar_width: 200px;
   text-align: center;
   font-size: 1.5em;
   font-family: 'bebas_neueregular', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
+
+  @include animate(.3s);
+  }
 
 #navbar.hidden {
   left: -$navbar_width;

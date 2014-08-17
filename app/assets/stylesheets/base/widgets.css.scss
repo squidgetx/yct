@@ -8,11 +8,7 @@ $widgetColor: rgba(0,0,0,0.3);
   background-color: $widgetColor;
   z-index: 30;
   padding: .7em;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  @include animate(.3s);
 }
 
 .widget:hover, .widget:focus {
@@ -25,12 +21,8 @@ ul#nav-left {
   top: 2em;
   left: 2em;
   z-index: 30;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
 
+  @include animate(.3s);
 }
 
 ul#nav-left.hidden {

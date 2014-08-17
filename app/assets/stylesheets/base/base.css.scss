@@ -1,0 +1,32 @@
+// this css file contains base global styles for basic html elements
+// as well as sass mixins
+
+a {
+  text-decoration: none;
+  color: lighten($textColor, 20%);
+}
+
+.fa {
+  color: $iconColor;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden-fade {
+  opacity: 0;
+}
+
+@mixin animate($time) {
+  -webkit-transition: all $time;
+  -moz-transition: all $time;
+  -ms-transition: all $time;
+  -o-transition: all $time;
+  transition: all $time;
+}
+
+
+
