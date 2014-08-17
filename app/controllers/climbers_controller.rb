@@ -65,6 +65,8 @@ class ClimbersController < ApplicationController
 
   def set_cover
     @cover = 'assets/climbers.jpg'
+    # todo: figure out the fuck asset url works via controller, or make
+    # separate layouts
   end
 
   def climb_params

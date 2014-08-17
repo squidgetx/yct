@@ -9,7 +9,7 @@ html
     = csrf_meta_tags
   body
     = render partial: 'layouts/mobile_nav'
-    = content_tag :div, id: 'header_image', style: "background-image: url('#{@cover if @cover}')" do
+    = content_tag :div, id: 'header_image', style: "background-image: url('#{set_cover @cover}')" do
     #wrapper
         = render partial: 'layouts/flash'
         = yield

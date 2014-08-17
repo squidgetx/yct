@@ -29,4 +29,14 @@ module ApplicationHelper
 
   end
 
+  def set_cover cover
+    return cover if cover
+    if rand > 0.5
+      return image_path 'climbers.jpg'
+    else
+      return image_path 'climbers2.jpg'
+    end
+
+  end
+
 end
