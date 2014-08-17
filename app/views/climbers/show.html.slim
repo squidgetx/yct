@@ -1,13 +1,15 @@
-= image_tag @climber.avatar.url(:medium)
-h2
-  = best_in_place @climber, :name
-h4
-  = best_in_place @climber, :year, place_holder: '(graduation year)'
-h4
-  = best_in_place @climber, :title, place_holder: '(title)'
-h4
-  = best_in_place @climber, :email
-p
-  = best_in_place @climber, :desc, as: :textarea, place_holder: '(description)'
+#header_container
+  h2
+    = @climber.name
+  h4
+    = @climber.title
+#content
+  = image_tag @climber.avatar.url(:medium)
+  h4
+    = @climber.year
+  h4
+    = @climber.email
+  p
+    = @climber.desc
 
 

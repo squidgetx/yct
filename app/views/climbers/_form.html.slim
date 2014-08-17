@@ -1,0 +1,15 @@
+= simple_form_for @climber do |f|
+  = f.error_notification
+  = f.input :name, placeholder: 'Adam Ondra'
+  = f.input :login, input_html: {value: @login, disabled: !@can_edit_login}
+  = f.input :email, input_html: {value: @email}
+  = f.input :title, placeholder: 'Captain? President?'
+  = f.input :role, as: :hidden, input_html: {value: 'normal'}
+  = hidden_field_tag :token, @token
+
+  = f.input :desc, as: :text, placeholder: 'Write something about yourself!', label: 'Bio'
+  = f.label 'Avatar'
+  = f.file_field :avatar
+
+  br
+  = f.button :submit, 'Save!'

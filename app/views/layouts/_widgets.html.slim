@@ -1,9 +1,15 @@
 ul#nav-left
   li#nav-link.widget
     = icon('fa fa-bars fa-2x')
+  - if @new
+    li.widget
+      = link_to icon('fa fa-plus fa-2x'), @new
   - if @edit
     li.widget
       = link_to icon('fa fa-pencil fa-2x'), @edit
+  - if @destroy
+    li.widget
+      = link_to icon('fa fa-x fa-2x'), @destroy
 
 .widget#user-link
   - unless current_user.nil?

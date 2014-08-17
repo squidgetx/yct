@@ -5,20 +5,27 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @new = new_post_path
   end
-  def show
 
+  def show
+    @edit = edit_post_path @post
+    @new = new_post_path
   end
+
   def edit
   end
+
   def new
   end
+
   def create
     p = post_params
     p[:climber_id] = current_user.id
     @post = Post.create(p)
     redirect_to(@post)
   end
+
   def update
     Post.update(@post.id, post_params)
     respond_to do |format|
@@ -26,6 +33,7 @@ class PostsController < ApplicationController
       format.json { respond_with_bip(@post) }
     end
   end
+
   def destroy
     @post.destroy
     redirect_to :action => 'index'

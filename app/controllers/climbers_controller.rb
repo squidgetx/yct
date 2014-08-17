@@ -2,22 +2,21 @@ class ClimbersController < ApplicationController
   before_action CASClient::Frameworks::Rails::Filter, only: [:new]
   include ActionView::Helpers::AssetUrlHelper
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
-  before_action :set_toolbars, only: [:show]
-
-  respond_to :html, :json
 
   def index
     @climbers = Climber.all
     if session[:cas_user]
       @user = session[:cas_user]
     end
+    @new = new_pending_climber_path
   end
 
   def show
+    @edit = edit_climber_path @climber
+    @new = new_pending_climber_path
   end
 
   def new
-
     @token = params[:token]
     pending = PendingClimber.where(token: @token)
 
@@ -47,6 +46,10 @@ class ClimbersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def update
     Climber.update(@climber.id, climb_params)
     respond_with @climber
@@ -61,10 +64,6 @@ class ClimbersController < ApplicationController
 
   def find_climber
     @climber = Climber.find(params[:id])
-  end
-
-  def set_toolbars
-    @edit = edit_climber_path @climber
   end
 
   def climb_params

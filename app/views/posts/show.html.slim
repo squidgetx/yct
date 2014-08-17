@@ -1,6 +1,7 @@
-h2
-  = @post.title
-= link_to icon('nav-link fa fa-pencil fa-2x'), edit_post_path(@post)
-h4
-  == "Posted by #{link_to @post.climber.name, climber_path(@post.climber)} on #{@post.created_at.to_date.to_s(:long)}"
-= markdown @post.text
+#header_container
+  h2
+    = @post.title
+#content
+  h4
+    == "Posted by #{link_to @post.climber.name, climber_path(@post.climber)} on #{@post.created_at.to_date.to_s(:long)}"
+  = markdown @post.text
