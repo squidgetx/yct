@@ -24,10 +24,8 @@ $overlayColor: rgba(0,0,0,0.3);
 }
 
 .heading_container {
-  display: none;
-  line-height: 1em;
   position: absolute;
-  bottom: 20%;
+  bottom: 0;
   background-color: rgba(0,0,0,0.5);
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -35,11 +33,14 @@ $overlayColor: rgba(0,0,0,0.3);
   -o-transition: all .3s;
   transition: all .3s;
 
+  z-index: 32;
+  width: 100%;
 }
 
 .heading_container a {
-  padding: 0.5em;
+  padding: 1em;
   display: block;
+  margin: 0;
 }
 
 .heading_container:hover {
@@ -47,17 +48,17 @@ $overlayColor: rgba(0,0,0,0.3);
 }
 
 .slide_heading {
-  margin: 0.5em 50px 0 0;
-  font-size: 2.5em;
+  font-size: 2em;
   color: #eee;
   text-align: right;
+  margin: 0;
 }
 
 .slide_subheading {
-  margin: 0 50px 0 0;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #ddd;
-  text-align: right;
+  text-align: left;
+  margin: 0;
 }
 
 #overlay {
@@ -88,6 +89,15 @@ $overlayColor: rgba(0,0,0,0.3);
 
 .slide-overlay:hover {
   background-color: rgba(0,0,0,0);
+}
+
+.slide-overlay a {
+  position: absolute;
+  top:  0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
 }
 
 .logo {

@@ -3,11 +3,33 @@ body {
   background: $bodyBackground;
 }
 
+.hidden-fade {
+  opacity: 0;
+}
+
+#header_image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $coverHeight;
+  background-size: cover;
+}
+
+
 #wrapper {
   position: absolute;
   width: 100%;
-  top: $smallNavHeight;
   left: 0;
+  top: $coverHeight;
+}
+
+#tiles {
+  line-height: 0;
+}
+
+#wrapper.splash {
+  top: 100vh;
 }
 
 #content {

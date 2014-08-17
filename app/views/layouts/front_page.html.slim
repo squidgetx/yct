@@ -7,7 +7,8 @@ html
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body.splash
+  body
     = render partial: 'layouts/mobile_nav'
-    = yield
+    #wrapper.splash
+      = yield
     = render partial: 'layouts/navbar'

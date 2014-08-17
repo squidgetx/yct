@@ -73,10 +73,6 @@ nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
   fill: darken($iconColor, 20%);
 }
 
-li.home {
-  width: 3em;
-}
-
 .icon {
   stroke: $iconColor;
   fill: $iconColor;
@@ -142,9 +138,6 @@ li.home {
     left: 0;
     z-index: 20;
   }
-
-
-
 
   li#home {
     display: block;

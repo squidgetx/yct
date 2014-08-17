@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_photo, only: [:show]
 
   # GET /events
   # GET /events.json
@@ -60,6 +61,11 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def set_photo
+      # assume that @event exists
+      @cover = @event.cover(:splash)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

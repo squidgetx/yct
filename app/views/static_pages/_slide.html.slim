@@ -1,5 +1,5 @@
 = content_tag :div, class: "slide", style: "background-image: url('#{slide.cover(:splash)}')"
-  .heading_container
+  .heading_container.hidden-fade
     a href = event_path(slide)
       h3.slide_heading
          = slide.name
@@ -7,3 +7,4 @@
         p
           = slide.description
   .slide-overlay
+    a href = event_path(slide)
