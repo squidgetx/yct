@@ -5,6 +5,6 @@
          = slide.name
       h3.slide_subheading
         p
-          = slide.description
+          = truncate slide.description, 64
   .slide-overlay
     a href = event_path(slide)

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_photo, only: [:show]
+  before_action :set_toolbars, only: [:show, :edit]
+  layout 'events_layout', only: :show
 
   # GET /events
   # GET /events.json
@@ -63,8 +64,9 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
-    def set_photo
+    def set_toolbars
       # assume that @event exists
+      @edit = edit_event_path(@event)
       @cover = @event.cover(:splash)
     end
 

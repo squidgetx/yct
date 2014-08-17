@@ -2,7 +2,7 @@ class ClimbersController < ApplicationController
   before_action CASClient::Frameworks::Rails::Filter, only: [:new]
   include ActionView::Helpers::AssetUrlHelper
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
-  before_action :set_cover
+  before_action :set_toolbars, only: [:show]
 
   respond_to :html, :json
 
@@ -63,10 +63,8 @@ class ClimbersController < ApplicationController
     @climber = Climber.find(params[:id])
   end
 
-  def set_cover
-    @cover = 'assets/climbers.jpg'
-    # todo: figure out the fuck asset url works via controller, or make
-    # separate layouts
+  def set_toolbars
+    @edit = edit_climber_path @climber
   end
 
   def climb_params

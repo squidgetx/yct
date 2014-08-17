@@ -1,8 +1,10 @@
-h2
-  = @event.name
-h4
-  = @event.get_range
-p
-  = @event.description
-
-= link_to 'Edit', edit_event_path(@event)
+#header_container
+  h2
+    = @event.name
+  h4
+    = @event.get_range
+  a.button
+    | Sign Up
+#content
+  p
+    = @event.description

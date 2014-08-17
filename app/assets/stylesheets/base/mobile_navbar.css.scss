@@ -1,81 +1,46 @@
-$widgetColor: rgba(0,0,0,0.3);
+$navbar_width: 200px;
 
-nav.menu {
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 36;
+
+  width: $navbar_width;
+  height: 100%;
+
   color: $menuTextColor;
-  overflow: hidden;
   background-color: $baseMenuColor;
+
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'bebas_neueregular', "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  width: 100%;
-  text-align: center;
-  font-size: 1.5em;
-}
-
-nav.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-$navbar_width: 200px;
-
-#navbar {
-  position: fixed;
-  width: $navbar_width;
-  height: 100%;
-  top:0;
-  z-index: 36;
 }
 
 #navbar.hidden {
   left: -$navbar_width;
 }
 
-#navbar a {
+#navbar li a {
   display: inline-block;
-}
-
-nav.menu li a, .widget {
   box-sizing: border-box;
   color: $menuTextColor;
-  text-align: center;
-}
-
-.widget {
-  background-color: $widgetColor;
-  z-index: 30;
-  padding: .7em;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.widget:hover, .widget:focus {
-  cursor: pointer;
-  background-color: rgba(0,0,0,0.5);
-
-}
-
-nav.menu li a {
-    box-sizing: border-box;
-    position: relative;
-    text-decoration: none;
-    width: 100%;
-    font-family: 'bebas_neueregular', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    height: 3em;
-    padding: 1em 0.5em;
+  position: relative;
+  width: 100%;
+  height: 3em;
+  padding: 1em 0.5em;
 }
 
 li#home a {
   height: 4.5em;
 }
 
-nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
+#navbar a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
   background-color: lighten($baseMenuColor, 20%);
 }
 
@@ -98,58 +63,4 @@ nav.menu a:hover, li.hover, nav.menu li:focus, nav.menu a:focus {
   padding-left: 3.4em;
 }
 
-.front_page input {
-//form styling
-  background-color: rgba(255,255,255,0.5);
-  border: 0;
-  height: 2em;
-  color: #333;
-  font-family: 'bebas_neueregular', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 0;
-  padding-left: .5em;
 
-}
-
-#nav-link {
-  position: absolute;
-  top: 2em;
-  left: 2em;
-}
-
-#nav-link.hidden {
-  left: 24px + $navbar_width;
-  z-index: 36;
-}
-
-#user-link {
-  position: absolute;
-  top: 2em;
-  right: 2em;
-}
-
-#search-form {
-  position: absolute;
-  top: 2em;
-  right: 5em;
-  background: none;
-
-}
-
-@media only screen and (min-width: 768px) {
-
-  #mobile_home {
-    display: none;
-  }
-
-  #navbar {
-    top: 0;
-    left: 0;
-    z-index: 20;
-  }
-
-  nav.menu li a {
-    padding-left: 2em;
-    padding-right: 2em;
-  }
-
-}

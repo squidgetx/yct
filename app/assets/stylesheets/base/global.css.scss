@@ -7,16 +7,6 @@ body {
   opacity: 0;
 }
 
-#header_image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: $coverHeight;
-  background-size: cover;
-}
-
-
 #wrapper {
   position: absolute;
   width: 100%;
@@ -24,8 +14,8 @@ body {
   top: $coverHeight;
 }
 
-#tiles {
-  line-height: 0;
+#wrapper.full {
+  top: 0;
 }
 
 #wrapper.splash {
@@ -36,6 +26,22 @@ body {
   position: relative;
   width: 90%;
   margin: auto;
+  text-align: center;
+}
+
+#header_container {
+  font-family: 'bebas_neueregular';
+  //position: fixed;
+  top: 0;
+  color: #111;
+  font-size: 6em;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#header_container h2,h4 {
+  margin: 0;
 }
 
 a {
@@ -70,5 +76,11 @@ a {
     color: #eee;
 }
 
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 

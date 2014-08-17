@@ -1,6 +1,6 @@
 var toggleMenu = function() {
   $('#navbar').toggleClass('hidden');
-  $('#nav-link').toggleClass('hidden');
+  $('#nav-left').toggleClass('hidden');
 };
 
 $('document').ready( function() {
