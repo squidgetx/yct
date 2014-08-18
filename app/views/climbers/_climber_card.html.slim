@@ -1,10 +1,9 @@
-.climber_card
-  = content_tag :div, class: 'climber_card_img tooltip',
-    style: "background-image: url('#{climber_card.avatar.url(:medium)}')",
-    title: "#{climber_card.name}\n#{climber_card.role}" do
+= content_tag :div, class: 'card climber_card',
+  style: "background-image: url('#{climber_card.avatar.url(:medium)}')" do
+  .heading_container.climber_card
     a href = url_for(climber_card)
-      span.link_cover
-
-  p.climber_card_title
-     = climber_card.name
+      h2.slide_subheading
+        = climber_card.name
+      h4.slide_subheading
+        = climber_card.title
 

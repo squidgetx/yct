@@ -1,12 +1,88 @@
-.event_card {
-  width: 25%;
-  height: 16em;
+.card {
   display: inline-block;
   background-size: cover;
   position: relative;
 }
 
+.event_card {
+  width: 25%;
+  height: 16em;
+ }
+
 .event_card a {
-  line-height: 2em;
+  padding: .5em;
 }
 
+.card a {
+  line-height: 2em;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+#tiles {
+  line-height: 0;
+}
+
+.card.climber_card {
+  height: 15em;
+  width: 12.5%;
+}
+
+.card.post_card {
+  height: 18em;
+  width: 50%;
+  overflow: hidden;
+  line-height: 1.4em;
+  background-color: darken($bodyBackground, 10%);
+  @include animate(.3s);
+}
+
+.card.post_card:hover {
+  background-color: lighten($bodyBackground, 10%);
+}
+
+.heading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  font-size: 2em;
+  overflow: hidden;
+  color: rgba(0,0,0,0.75);
+}
+
+.card_content {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  padding: 2em;
+  text-align: center;
+  color: rgba(0,0,0,0.7);
+}
+
+.text_wrapper {
+  display: inline-block;
+  margin: auto;
+  text-align: left;
+}
+
+.text_wrapper p {
+  margin: 0;
+}
+
+.heading_container.climber_card {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  @include animate(.3s);
+}
+
+.heading_container.climber_card:hover {
+  opacity: 1;
+}

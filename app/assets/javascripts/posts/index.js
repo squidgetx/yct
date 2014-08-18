@@ -1,8 +1,23 @@
+function truncate() {
+  $('.card_content').dotdotdot({
+    height: null,
+    watch: 'window'
+  });
+}
+
 $(document).ready(function() {
 
-  $('.create_post').click(function() {
-    $('.new_post').css('display','block');
-
+  $('.card_content').each(function(index) {
+      var color = 'rgba(0,0,0,' + (Math.random()/3).toString() + ')'
+      $(this).css('background-color', color);
   });
+
+  $('.heading').each(function(index) {
+      var color = 'rgba(0,0,0,' + (Math.random()/3).toString() + ')'
+      $(this).css('background-color', color);
+  });
+
+  truncate();
+
 
 });

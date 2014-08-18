@@ -8,9 +8,10 @@
 
 8.times do
 Climber.create! do |climber|
-  climber.name = "Riley Rice"
+  climber.name = ["Riley Rice", "Juan Pablo", "Yanbo Li", "Dante Archangeli", "Grace Stonecipher"].sample
   climber.role = 'normal'
   climber.login = 'some login'
+  climber.email = 'some email'
   climber.avatar = File.open(Dir.glob(File.join(Rails.root, 'db', 'seed_images', '*')).sample)
 end
 end

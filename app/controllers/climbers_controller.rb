@@ -47,12 +47,13 @@ class ClimbersController < ApplicationController
   end
 
   def edit
-
+    @login = @climber.login
+    @can_edit_login = can? :create, Climber
   end
 
   def update
     Climber.update(@climber.id, climb_params)
-    respond_with @climber
+    redirect_to @climber
   end
 
   def destroy

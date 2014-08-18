@@ -1,5 +1,8 @@
-.post_card
-  h2
-    = link_to post_card.title, post_path(post_card)
-  p.text
-    = markdown post_card.text
+.card.post_card
+  a href = post_path(post_card)
+    .heading
+      h2
+        = post_card.title
+    .card_content
+      .text_wrapper
+        = markdown post_card.text

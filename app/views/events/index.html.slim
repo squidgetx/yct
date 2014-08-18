@@ -1,2 +1,11 @@
+#header_container
+  h2
+    | Let's Do Something
+
 #tiles
-  = render partial: 'event_card', collection: @events
+  - if @events.empty?
+    #content
+      h4
+        | No events found!
+  - else
+    = render partial: 'event_card', collection: @events
