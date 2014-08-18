@@ -8,7 +8,18 @@
   = f.file_field :cover
   br
 
-  = f.label 'Signupable'
+  = f.label 'Sign Ups'
   = f.check_box :signup
-  = f.hint "(Allow users to sign up for this event)"
+  = f.hint "(Allow logged in users to sign up for this event)"
+  br
+
+  = f.label 'Public Sign Ups'
+  = f.check_box :public_signup
+  = f.hint "(Allow non-members to sign up for this event)"
+  br
+
+  = f.label 'Private'
+  = f.check_box :private
+  = f.hint "(Hide this event from non-logged in users)"
+  br
   = f.button :submit, 'Save Event'

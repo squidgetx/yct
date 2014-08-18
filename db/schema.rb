@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818035218) do
+ActiveRecord::Schema.define(version: 20140818222243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20140818035218) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.boolean  "public_signup"
+    t.boolean  "private",            default: false
   end
 
   create_table "faqs", force: true do |t|
@@ -92,6 +94,7 @@ ActiveRecord::Schema.define(version: 20140818035218) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "private",    default: false
   end
 
 end

@@ -1,12 +1,19 @@
 .control-label {
   display: inline-block;
   text-align: right;
-  width: 5em;
+  width: 10em;
+  font-weight: 600;
+  font-size: .8em;
 }
 
 span.error {
   color: #e44444;
   padding: 1em;
+}
+
+span.hint {
+  font-size: .8em;
+  margin-left: 1em;
 }
 
 input[type=submit] {
