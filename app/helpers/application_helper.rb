@@ -21,6 +21,7 @@ module ApplicationHelper
   end
 
   def truncate string, length
+    return "" if string.blank?
     if string.length <= length
       return string
     else

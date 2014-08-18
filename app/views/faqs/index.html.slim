@@ -1,17 +1,24 @@
-h1
-  | Listing faqs
-table
-  thead
-    tr
-      th[colspan="3"]
-  tbody
-    - @faqs.each do |faq|
+#header_container
+  h2
+    | Listing faqs
+#content
+  table
+    thead
       tr
-        td
-          = link_to 'Show', faq
-        td
-          = link_to 'Edit', edit_faq_path(faq)
-        td
-          = link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' }
-br
-= link_to 'New Faq', new_faq_path
+        th
+          | Question
+        th
+          | Answer
+        th
+        th
+    tbody
+      - @faqs.each do |faq|
+        tr
+          td
+            = faq.question
+          td
+            = truncate faq.answer, 100
+          td.widget
+            = link_to icon('fa fa-pencil'), edit_faq_path(faq)
+          td.widget
+            = link_to icon('fa fa-times'), faq, method: :delete, data: { confirm: 'Delete Faq: Are you sure?' }

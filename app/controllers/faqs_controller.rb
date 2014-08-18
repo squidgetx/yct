@@ -5,6 +5,7 @@ class FaqsController < ApplicationController
   # GET /faqs.json
   def index
     @faqs = Faq.all
+    @new = new_faq_path
   end
 
   # GET /faqs/1
@@ -29,7 +30,7 @@ class FaqsController < ApplicationController
     respond_to do |format|
       if @faq.save
         format.html { redirect_to @faq, notice: 'Faq was successfully created.' }
-        format.json { render :show, status: :created, location: @faq }
+        format.json { render :index, status: :created, location: @faq }
       else
         format.html { render :new }
         format.json { render json: @faq.errors, status: :unprocessable_entity }
@@ -43,7 +44,7 @@ class FaqsController < ApplicationController
     respond_to do |format|
       if @faq.update(faq_params)
         format.html { redirect_to @faq, notice: 'Faq was successfully updated.' }
-        format.json { render :show, status: :ok, location: @faq }
+        format.json { render :index, status: :ok, location: @faq }
       else
         format.html { render :edit }
         format.json { render json: @faq.errors, status: :unprocessable_entity }
