@@ -9,12 +9,12 @@ class ClimbersController < ApplicationController
     if session[:cas_user]
       @user = session[:cas_user]
     end
-    @new = new_pending_climber_path
+    @new = new_pending_climber_path if can? :invite, Climber
   end
 
   def show
-    @edit = edit_climber_path @climber
-    @new = new_pending_climber_path
+    @edit = edit_climber_path @climber if can? :edit, @climber
+    @new = new_pending_climber_path if can? :invite, Climber
   end
 
   def new

@@ -1,6 +1,11 @@
 class StaticPagesController < ApplicationController
   layout 'front_page', only: :home
-  def join
+
+  def donate
+  end
+
+  def settings
+    authorize!
   end
 
   def home

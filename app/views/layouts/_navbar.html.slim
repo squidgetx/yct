@@ -3,11 +3,15 @@
     li.home#home
       = link_to embedded_svg("logo.svg", class: "icon"), root_path
     li
-      = link_to 'Climbers', climbers_path
-    li
       = link_to 'Events', events_path
     li
       = link_to 'News', posts_path
-    - if current_user.nil? || current_user.id.nil?
+    li
+      = link_to 'Climbers', climbers_path
+    li
+      = link_to 'FAQ', root_path+'#faq'
+    li
+      = link_to 'Support', '/donate/'
+    - if can? :manage, :settings
       li
-        = link_to 'Join', '/join'
+        = link_to 'Settings', '/settings/'

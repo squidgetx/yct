@@ -6,13 +6,13 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all
-    @new = new_post_path
+    @posts = Post.order('created_at ASC')
+    @new = new_post_path if can? :create, Post
   end
 
   def show
-    @edit = edit_post_path @post
-    @new = new_post_path
+    @edit = edit_post_path @post if can? :edit, @post
+    @new = new_post_path  if can? :create, Post
   end
 
   def edit

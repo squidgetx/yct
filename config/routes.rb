@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/join', path: :join
+  get 'static_pages/donate', path: :donate
+  get 'static_pages/settings', path: :settings
 
   get 'static_pages/home', path: :home
 
