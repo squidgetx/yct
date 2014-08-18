@@ -1,3 +1,4 @@
+
 #overlay
   #logo-container
     = embedded_svg('logo.svg',class: 'logo');
@@ -5,13 +6,21 @@
 
 
 #slides
-    - count = 0
-    - @events.each do |e|
-      = render partial: 'slide', locals: {index: count, slide: e}
-      - count += 1
-    = content_tag :div, class: "slide inactive"
-      /posts index
-      p
-        | posts index!
+  - count = 0
+  - @events.each do |e|
+    = render partial: 'slide', locals: {index: count, slide: e}
+    - count += 1
+
+#wrapper.splash
+  .splash_title
+    = link_to 'Recent News', posts_path
+  .tiles
+    = render partial: 'posts/post_card', collection: @posts
+  .splash_title#join
+    | Sign Up
+  .page
+    p
+      | This is information
+
 
 

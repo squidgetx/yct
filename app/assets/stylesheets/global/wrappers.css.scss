@@ -12,12 +12,12 @@ body {
 
 #wrapper.splash {
   top: 100vh;
+  z-index: 29;
 }
 
 #wrapper.show {
   top: $largeCoverHeight;
 }
-
 
 #content {
   position: relative;
@@ -39,6 +39,23 @@ body {
 
 #header_container h2,h4,h6 {
   margin: 0;
+}
+
+.splash_title {
+  position: relative;
+  font-family: 'bebas_neueregular';
+  font-size: 6em;
+  width: 100%;
+  color: #eee;
+}
+
+.splash_title a {
+  color: #eee;
+  @include animate(.5s);
+}
+
+.splash_title a:hover {
+  color: #bdf;
 }
 
 .tooltip {

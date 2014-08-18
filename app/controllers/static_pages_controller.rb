@@ -5,5 +5,6 @@ class StaticPagesController < ApplicationController
 
   def home
     @events = Event.all.sample(5)
+    @posts = Post.all.sample(4)
   end
 end
