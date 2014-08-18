@@ -27,8 +27,8 @@ gem 'textacular'
 gem 'rails_admin'
 gem 'simple_form'
 gem 'slim'
-gem 'best_in_place', :git => 'https://github.com/bernat/best_in_place.git'
 gem 'font-awesome-rails'
+gem 'jquery-timepicker-rails'
 
 group :development, :test do
   gem 'pry-byebug'

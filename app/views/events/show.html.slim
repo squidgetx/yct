@@ -4,7 +4,8 @@
   h4
     = @event.get_range
 #content
-  a.btn.signup href='#'
-    | Sign Up
+  - if @event.signup
+    a.btn.signup href='#'
+      | Sign Up
   p
     = @event.description

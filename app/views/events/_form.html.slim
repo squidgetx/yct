@@ -6,4 +6,9 @@
   = f.input :end_date
   = f.label 'Cover Photo'
   = f.file_field :cover
+  br
+
+  = f.label 'Signupable'
+  = f.check_box :signup
+  = f.hint "(Allow users to sign up for this event)"
   = f.button :submit, 'Save Event'

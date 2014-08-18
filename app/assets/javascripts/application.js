@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require best_in_place
 //= require turbolinks
 //= require jquery.turbolinks
+//= require jquery.timepicker.js
 //= require_tree .
