@@ -1,21 +1,23 @@
+
 body {
   background: $bodyBackground;
 }
 
 #wrapper {
   position: absolute;
-  width: 100%;
   left: 0;
   top: $coverHeight;
-}
-
-#wrapper.full {
-  top: 0;
+  width: 100%;
 }
 
 #wrapper.splash {
   top: 100vh;
 }
+
+#wrapper.show {
+  top: $largeCoverHeight;
+}
+
 
 #content {
   position: relative;
@@ -26,7 +28,7 @@ body {
 
 #header_container {
   font-family: 'bebas_neueregular';
-  //position: fixed;
+  position: fixed;
   top: 0;
   color: #111;
   font-size: 6em;

@@ -17,7 +17,7 @@ $widgetColor: rgba(0,0,0,0.3);
 }
 
 ul#nav-left {
-  position: absolute;
+  position: fixed;
   top: 2em;
   left: 2em;
   z-index: 30;
@@ -34,13 +34,13 @@ ul#nav-left li {
 }
 
 #user-link {
-  position: absolute;
+  position: fixed;
   top: 2em;
   right: 2em;
 }
 
 #search-form {
-  position: absolute;
+  position: fixed;
   top: 2em;
   right: 5em;
   background: none;

@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
   before_action :find_post, only: [:show, :edit, :destroy, :update]
+
   respond_to :html, :json
+
 
   def index
     @posts = Post.all

@@ -2,6 +2,7 @@ class ClimbersController < ApplicationController
   before_action CASClient::Frameworks::Rails::Filter, only: [:new]
   include ActionView::Helpers::AssetUrlHelper
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
+  layout 'show', only: :show
 
   def index
     @climbers = Climber.all
