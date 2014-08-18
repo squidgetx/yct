@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :faqs
-
-  resources :faws
 
   get 'static_pages/join', path: :join
 
@@ -29,6 +26,7 @@ Rails.application.routes.draw do
   resources :events
 
   resources :pending_climbers, only: [:new, :create]
+  resources :faqs, except: [:show]
 
   # Example resource route with options:
   #   resources :products do

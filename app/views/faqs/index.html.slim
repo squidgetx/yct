@@ -1,0 +1,17 @@
+h1
+  | Listing faqs
+table
+  thead
+    tr
+      th[colspan="3"]
+  tbody
+    - @faqs.each do |faq|
+      tr
+        td
+          = link_to 'Show', faq
+        td
+          = link_to 'Edit', edit_faq_path(faq)
+        td
+          = link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Faq', new_faq_path

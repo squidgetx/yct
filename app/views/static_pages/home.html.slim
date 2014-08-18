@@ -19,11 +19,7 @@
   .splash_title#faq
     | CR1T1C4L 1NF0
   .page
-    p.question
-      | Am I gonna die?
-    p.answer
-      | Nope!
-
+    = render partial: 'faqs/faq_card', collection: @faqs
 
 
 

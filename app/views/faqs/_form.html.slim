@@ -1,0 +1,5 @@
+= simple_form_for(@faq) do |f|
+  = f.error_notification
+  = f.input :question
+  = f.input :answer, as: :text
+  = f.button :submit, 'Save!'
