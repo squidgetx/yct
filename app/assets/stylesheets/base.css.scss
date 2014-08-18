@@ -28,5 +28,8 @@ ul {
   transition: all $time;
 }
 
-
+@mixin heading {
+  font-family: 'bebas_neueregular';
+  text-transform: uppercase;
+}
 

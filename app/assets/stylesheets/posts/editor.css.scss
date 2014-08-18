@@ -1,8 +1,10 @@
+$toolbarColor: $linkColor;
+
 #toolbar {
   list-style-type: none;
   padding: 0px;
-  margin: 0px;
-  margin-left: 8em;
+  margin: 1em;
+  margin-left: 7em;
 }
 
 #toolbar ul {
@@ -14,12 +16,12 @@
   width: 2em;
   text-align: center;
   padding: 0.25em;
-  background-color: $baseMenuColor;
+  background-color: $toolbarColor;
   cursor: pointer;
 }
 
 #toolbar li:hover {
-  background-color: darken($baseMenuColor, 15%);
+  background-color: lighten($toolbarColor, 20%);
 }
 
 .markdown_text_area {

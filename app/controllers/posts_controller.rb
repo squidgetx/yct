@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit]
   load_and_authorize_resource
   before_action :find_post, only: [:show, :edit, :destroy, :update]
 

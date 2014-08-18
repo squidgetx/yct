@@ -174,26 +174,3 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   padding: 1em;
 }
 
-.control-label {
-  display: inline-block;
-  text-align: right;
-  width: 5em;
-}
-
-span.error {
-  color: #e44444;
-  padding: 1em;
-}
-
-input[type=submit] {
-  background-color: $baseMenuColor;
-  margin-top: 1em;
-  padding: 0.5em 1em;
-  border: 0;
-  font-variant: small-caps;
-  border-radius: 0.3em;
-}
-
-input[type=submit]:hover{
-  background-color: darken($baseMenuColor, 15%);
-}

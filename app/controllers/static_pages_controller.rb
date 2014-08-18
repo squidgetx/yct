@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   end
 
   def settings
-    authorize!
+    authorize! :manage, :settings
   end
 
   def home

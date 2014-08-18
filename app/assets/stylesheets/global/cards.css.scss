@@ -39,7 +39,8 @@
 }
 
 .card.post_card:hover {
-  background-color: lighten($bodyBackground, 10%);
+  background-color: lighten(desaturate($yaleBlue,50%),70%);
+//  lighten($bodyBackground, 10%);
 }
 
 .heading {

@@ -1,5 +1,5 @@
 class ClimbersController < ApplicationController
-  before_action CASClient::Frameworks::Rails::Filter, only: [:new]
+  before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit]
   include ActionView::Helpers::AssetUrlHelper
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
   layout 'show', only: :show
