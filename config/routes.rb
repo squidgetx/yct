@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :faqs
+
+  resources :faws
+
   get 'static_pages/join', path: :join
 
   get 'static_pages/home', path: :home
