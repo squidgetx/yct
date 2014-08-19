@@ -36,7 +36,7 @@ class PendingClimbersController < ApplicationController
   def destroy
     PendingClimber.find(params[:id]).destroy
     flash[:notice] = 'Invitation destroyed. The url will no longer grant access to the application'
-    redirect_to 'index'
+    redirect_to pending_climbers_path
   end
 
   private
