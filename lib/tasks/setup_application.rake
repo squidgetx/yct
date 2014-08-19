@@ -38,6 +38,19 @@ namespace :app do
           puts "configurations."
         end
       end
+
+      puts 'Enter the name of your organization'
+      title = STDIN.gets.chomp
+      puts 'What should the members of your organization be called? (eg swimmers, climbers, users)'
+      name = STDIN.gets.chomp
+      puts 'Enter some quick about text. You can edit this later'
+      about = STDIN.gets.chomp
+      AppConfig.create! do |a|
+        a.title = title
+        a.member_name = name
+        a.about = about
+      end
+
     else
       puts ''
       puts 'There appears to already be a user in the database. If you wish to run this'
