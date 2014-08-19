@@ -20,7 +20,7 @@ class Ability
         can :manage, Post
         can :manage, Event
         can :manage, Climber
-      when 'member' || 'moderator'
+      when 'normal' || 'moderator'
         can [:read, :create], Post
         can :read, Event
         can :edit, Post, climber_id: user.id

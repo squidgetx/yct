@@ -30,6 +30,7 @@ gem 'textacular'
 gem 'simple_form'
 gem 'slim'
 gem 'font-awesome-rails'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'pry-byebug'

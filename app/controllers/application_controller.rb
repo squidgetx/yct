@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :member?
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
@@ -22,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def member?
-    current_user.nil? || current_user.id.nil?
+    !( current_user.nil? || current_user.id.nil? )
   end
 
   def search

@@ -16,7 +16,7 @@ ul#nav-left
       a.tooltip title='This item is only visible to members'
         = icon('fa fa-eye-slash fa-2x')
 .widget#user-link
-  - unless current_user.nil?
+  - if member?
     = link_to icon('fa fa-user fa-2x'), climber_path(current_user)
   - else
     = link_to icon('fa fa-sign-in fa-2x'), CASClient::Frameworks::Rails::Filter.login_url(controller), data: { no_turbolink: true }
