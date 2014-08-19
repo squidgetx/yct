@@ -1,9 +1,8 @@
-#header_container
+= content_tag :div, id: "header_container", class: 'bg', style: "background-image: url('#{@event.cover(:splash)}')"
   h2
     = @event.name
   h6
     = @event.get_range
-#content
   - if can? :signup, @event
     =  form_tag signup_event_path(@event), method: 'get' do
       - # setting the form to use get is a hack to allow
@@ -12,14 +11,15 @@
       - # for non logged in users
       - if current_user.nil? || current_user.id.nil?
         = text_field_tag :email,"", class: 'signup_field', placeholder: 'Enter your email!'
-      br
       = submit_tag "Signup", id:'signup'
   - elsif current_user.signedup?(@event)
       = form_tag signdown_event_path(@event), method: 'get' do
         = submit_tag "Signed Up", id: 'signup', title: 'Click to un-sign-up'
+.tiles
+    = render partial: 'climbers/climber_card', collection: @event.climbers
+#content
   p
     = @event.description
   h2
     = "#{@event.num_signed_up} signed up"
-  .tiles
-    = render partial: 'climbers/climber_card', collection: @event.climbers
+
