@@ -62,7 +62,8 @@ class EventsController < ApplicationController
       # guest user
     else
       # reg user
-      @event.add_email(current_user.email)
+      @event.climbers << current_user
+      @event.save
     end
     flash[:notice] = 'Signed up!'
 
