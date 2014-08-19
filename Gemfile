@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '4.1.0'
+ruby '2.1.2'
+
+gem 'rails', '~> 4.1'
+
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -28,7 +31,6 @@ gem 'rails_admin'
 gem 'simple_form'
 gem 'slim'
 gem 'font-awesome-rails'
-gem 'jquery-timepicker-rails'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -37,3 +39,4 @@ group :development, :test do
   gem 'letter_opener'
 end
 
+gem 'rails_12factor', group: :production
