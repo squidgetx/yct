@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit]
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :signup]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :signup, :signdown]
   layout 'show', only: :show
 
   # GET /events
@@ -67,6 +67,12 @@ class EventsController < ApplicationController
     end
     flash[:notice] = 'Signed up!'
 
+    redirect_to @event
+  end
+
+  def signdown
+    @event.climbers.delete(current_user)
+    flash[:notice] = "Signed down!"
     redirect_to @event
   end
 

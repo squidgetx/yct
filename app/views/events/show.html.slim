@@ -1,7 +1,7 @@
 #header_container
   h2
     = @event.name
-  h4
+  h6
     = @event.get_range
 #content
   - if can? :signup, @event
@@ -14,5 +14,10 @@
         = text_field_tag :email,"", class: 'signup_field', placeholder: 'Enter your email!'
       br
       = submit_tag "Signup", id:'signup'
+  - elsif current_user.signedup?(@event)
+      = form_tag signdown_event_path(@event), method: 'get' do
+        = submit_tag "Signed Up", id: 'signup', title: 'Click to un-sign-up'
   p
     = @event.description
+  .tiles
+    = render partial: 'climbers/climber_card', collection: @event.climbers

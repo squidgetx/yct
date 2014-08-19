@@ -31,7 +31,8 @@ class Event < ActiveRecord::Base
     end_time = Time.at(self.end_date).strftime('%R')
     if start_date == end_date
       # the event is a single day event
-      return "#{start_date} #{start_time} - #{end_time}"
+      return "#{start_date} #{start_time} - #{end_time}" if start_time != end_time
+      return "#{start_date}"
     else
       # the event spans multiple days
       return "#{start_date} #{start_time} - #{end_date} #{end_time}"

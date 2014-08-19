@@ -8,6 +8,10 @@ class Climber < ActiveRecord::Base
 
   validates :role, :name, :login, :email, presence: true
 
+  def signedup?(event)
+    !self.events.where('event_id = ?', event.id).empty?
+  end
+
   def self.guest
     # return a dummy climber
     return Climber.new(
