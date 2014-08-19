@@ -27,8 +27,4 @@ test:
 
 production:
   <<: *default
-  database: climb_development
-  username: climb
-  password: black_diamond
-  host: localhost
-
+  database: climb_production
