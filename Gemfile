@@ -22,7 +22,7 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 gem "paperclip", "~> 4.1"
-gem 'rubycas-client', :git => "https://github.com/cthielen/rubycas-client"
+gem 'rubycas-client', :git => "https://github.com/rubycas/rubycas-client"
 gem 'cancancan'
 gem 'kramdown'
 gem 'textacular'
