@@ -9,7 +9,11 @@ class ClimbersController < ApplicationController
     if session[:cas_user]
       @user = session[:cas_user]
     end
-    @new = new_pending_climber_path if can? :invite, Climber
+    if @appconfig.restrict_new_accounts
+      @new = new_pending_climber_path if can? :invite, Climber
+    else
+      @new = new_climber_path
+    end
   end
 
   def show

@@ -13,6 +13,12 @@
 
 #wrapper.splash
   .splash_title
+    | About
+  .page
+    p
+      = markdown @appconfig.about
+
+  .splash_title
     = link_to 'Recent News', posts_path
   .tiles
     = render partial: 'posts/post_card', collection: @posts
