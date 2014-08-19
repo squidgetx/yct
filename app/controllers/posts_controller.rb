@@ -13,8 +13,10 @@ class PostsController < ApplicationController
 
   def show
     @edit = edit_post_path @post if can? :edit, @post
+    @destroy = @post if can? :destroy, @post
     @new = new_post_path  if can? :create, Post
     @hidden = @post.private
+    @index = @climbers_path
   end
 
   def edit

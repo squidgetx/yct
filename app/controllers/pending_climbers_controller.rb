@@ -9,6 +9,7 @@ class PendingClimbersController < ApplicationController
 
   def new
     @pending_climber  = PendingClimber.new
+    @index = pending_climbers_path
     render 'generate'
   end
 

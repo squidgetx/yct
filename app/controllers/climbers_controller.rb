@@ -23,7 +23,9 @@ class ClimbersController < ApplicationController
     else
       @new = new_climber_path
     end
+    @delete = @climber if can? :destroy, @climber
     @posts = Post.view(current_user).where("climber_id = ?", @climber.id)
+    @index = climbers_path
   end
 
   def new

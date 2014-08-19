@@ -11,8 +11,10 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    @index = events_path
     @edit = edit_event_path(@event) if can? :edit, @event
     @new = new_event_path(@event) if can? :create, Event
+    @delete = @event if can? :destroy, Event
   end
 
   # GET /events/new
