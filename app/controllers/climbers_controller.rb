@@ -24,7 +24,8 @@ class ClimbersController < ApplicationController
     raise CanCan::AccessDenied if (cannot? :create, Climber) && pending.empty?
     # new users are allowed if they have a valid token or if they have
     # permission
-    @email = pending.first.email unless pending.empty?
+    #@email = pending.first.email unless pending.empty?
+    @role = pending.empty? ? "normal" : pending.first.role
     @climber = Climber.new
     @login = session[:cas_user]
     @can_edit_login = can? :create, Climber
