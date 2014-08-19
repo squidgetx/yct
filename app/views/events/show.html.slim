@@ -15,6 +15,7 @@
   - elsif current_user.signedup?(@event)
       = form_tag signdown_event_path(@event), method: 'get' do
         = submit_tag "Signed Up", id: 'signup', title: 'Click to un-sign-up'
+  .maskw
 .tiles
     = render partial: 'climbers/climber_card', collection: @event.climbers
 #content
