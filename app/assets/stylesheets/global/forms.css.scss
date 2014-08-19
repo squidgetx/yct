@@ -35,3 +35,7 @@ input[type=submit], .btn {
 input[type=submit]:hover, .btn:hover{
   background-color: $yaleBlue;
 }
+
+.btn {
+  margin-left: 1em;
+}
