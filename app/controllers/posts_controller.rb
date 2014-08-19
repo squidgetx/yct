@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   def show
     @edit = edit_post_path @post if can? :edit, @post
     @new = new_post_path  if can? :create, Post
+    @hidden = @post.private
   end
 
   def edit

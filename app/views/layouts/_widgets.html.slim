@@ -1,16 +1,20 @@
 ul#nav-left
   li#nav-link.widget
-    = icon('fa fa-bars fa-2x')
+    a.tooltip title='Menu'
+      = icon('fa fa-bars fa-2x')
   - if @new
     li.widget
-      = link_to icon('fa fa-plus fa-2x'), @new
+      = link_to icon('fa fa-plus fa-2x'), @new, class: 'tooltip', title: 'Add'
   - if @edit
     li.widget
-      = link_to icon('fa fa-pencil fa-2x'), @edit
+      = link_to icon('fa fa-pencil fa-2x'), @edit, class: 'tooltip', title: 'Edit'
   - if @destroy
     li.widget
-      = link_to icon('fa fa-x fa-2x'), @destroy
-
+      = link_to icon('fa fa-x fa-2x'), @destroy, class: 'tooltip', title: 'Delete'
+  - if @hidden
+    li.widget
+      a.tooltip title='This item is only visible to members'
+        = icon('fa fa-eye-slash fa-2x')
 .widget#user-link
   - unless current_user.nil?
     = link_to icon('fa fa-user fa-2x'), climber_path(current_user)
