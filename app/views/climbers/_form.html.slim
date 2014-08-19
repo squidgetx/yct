@@ -1,7 +1,7 @@
 = simple_form_for @climber do |f|
   = f.error_notification
   = f.input :name, placeholder: 'Adam Ondra'
-  = f.input :login, input_html: {value: @login, disabled: !@can_edit_login}
+  = f.input :login, input_html: {value: @login, readonly: !@can_edit_login}
   = f.input :email
   = f.input :title, placeholder: 'Captain? President?'
   - if can? :change_role, :climber

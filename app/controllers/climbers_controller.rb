@@ -29,6 +29,7 @@ class ClimbersController < ApplicationController
     @climber = Climber.new
     @login = session[:cas_user]
     @can_edit_login = can? :create, Climber
+    binding.pry
   end
 
   def create
@@ -41,7 +42,8 @@ class ClimbersController < ApplicationController
       flash[:notice] = 'Account successfully created!'
       redirect_to(@climber)
     else
-      @email = pending.first.email unless pending.empty?
+      #@email = pending.first.email unless pending.empty?
+      @role = pending.empty? ? "normal" : pending.first.role
       @login = session[:cas_user]
       @can_edit_login = can? :create, Climber
       render :new
