@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819140149) do
+ActiveRecord::Schema.define(version: 20140819182936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20140819140149) do
     t.string   "role"
     t.string   "email"
     t.string   "title"
+  end
+
+  create_table "climbers_events", force: true do |t|
+    t.integer "climber_id"
+    t.integer "event_id"
   end
 
   create_table "climbers_photos", force: true do |t|
@@ -78,11 +83,6 @@ ActiveRecord::Schema.define(version: 20140819140149) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "cover"
-  end
-
-  create_table "photos_posts", force: true do |t|
-    t.integer "photo_id"
-    t.integer "post_id"
   end
 
   create_table "post_images", force: true do |t|

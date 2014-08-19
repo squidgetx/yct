@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  has_and_belongs_to_many :climbers
 
   has_attached_file :cover, styles: {splash: '960x960', thumb: '256x256'}, default_url: "images/:style/missing.png"
 
