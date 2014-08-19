@@ -19,5 +19,7 @@
         = submit_tag "Signed Up", id: 'signup', title: 'Click to un-sign-up'
   p
     = @event.description
+  h2
+    = "#{@event.num_signed_up} signed up"
   .tiles
     = render partial: 'climbers/climber_card', collection: @event.climbers

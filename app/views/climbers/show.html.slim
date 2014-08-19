@@ -18,9 +18,6 @@
       p
         = @climber.desc
   .climber-activity
-    - @posts.each do |p|
-      span.timestamp
-        = "#{p.created_at.to_s(:long)}"
-      span
-        = "#{@climber.first_name} wrote #{link_to p.title, post_path(p)}".html_safe
+    .tiles
+      = render partial: 'events/event_card', collection: @climber.events
 

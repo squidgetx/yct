@@ -6,6 +6,16 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
   validates :name, :start_date, :end_date, presence: true
 
+  def nonmembers
+    return [] if self.emails.blank?
+    return self.emails.split(',').count
+  end
+
+  def num_signed_up
+    self.climbers.count + self.nonmembers.count
+  end
+
+
   def self.view user
     if user.nil? || user.id.nil?
       Event.where('private = false')
