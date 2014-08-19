@@ -4,4 +4,10 @@
   = f.input :member_name, placeholder: 'Climber', hint: 'Swimmer, executive, team member, user'
   = f.input :about, placeholder: 'We are, quite simply, the best organization to ever grace the face of the earth'
   = f.input :restrict_new_accounts, hint: 'Tick this box if you want users to only be able to create accounts through the admin invite function'
+  = f.text_field :climbers_header
+  = f.hint 'Heading text of the users listing'
+  = f.text_field :events_header
+  = f.hint 'Heading text of the events listing'
+  = f.text_field :posts_header
+  = f.hint 'Heading text of the news listing'
   = f.button :submit

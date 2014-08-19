@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   #before_filter RubyCAS::Filter
   before_filter CASClient::Frameworks::Rails::GatewayFilter
+  before_action :check_app_config
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -10,6 +11,13 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
+  end
+
+  def check_app_config
+    if AppConfig.count == 0
+      render layout: 'noappconfig'
+    end
+    @appconfig = AppConfig.first
   end
 
 

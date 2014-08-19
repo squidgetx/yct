@@ -2,13 +2,12 @@ doctype html
 html
   head
     title
-      = @appconfig.title
+      | ???
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = favicon_link_tag
   body
-    = render partial: 'layouts/widgets'
-    = yield
-    = render partial: 'layouts/navbar'
+    p
+      | It looks like this app hasn't been fully set up. If you are the site owner, make sure to run rake app:setup in the console.

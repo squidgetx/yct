@@ -7,7 +7,7 @@
     li
       = link_to 'News', posts_path
     li
-      = link_to 'Climbers', climbers_path
+      = link_to @appconfig.member_name.pluralize, climbers_path
     li
       = link_to 'FAQ', root_path+'#faq'
     li

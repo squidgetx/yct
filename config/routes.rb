@@ -31,7 +31,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :app_configs, only: [:edit, :update]
+  resources :app_configs, only: [:update]
+  get '/app_configs' => 'app_configs#edit', as: :edit_app_configs
   resources :pending_climbers, only: [:new, :create]
   resources :faqs, except: [:show]
 

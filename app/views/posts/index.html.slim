@@ -1,6 +1,6 @@
 #header_container
   h2
-    | How's Tricks?
+    = @appconfig.posts_header
 
 .tiles
   = render partial: 'post_card', collection: @posts
