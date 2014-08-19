@@ -13,7 +13,14 @@ class Event < ActiveRecord::Base
     end
   end
 
-
+  def add_email email
+    if self.emails.blank?
+      self.emails = email
+    else
+      self.emails = self.emails + "," + email.to_s
+    end
+    return self.save
+  end
 
   def get_range
     # Return human readable string of the event time

@@ -1,17 +1,18 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :signup]
   layout 'show', only: :show
 
   # GET /events
   def index
     @events = Event.all
-    @new = new_event_path(@event)
+    @new = new_event_path(@event) if can? :create, Event
   end
 
   # GET /events/1
   def show
-    @edit = edit_event_path(@event)
-    @new = new_event_path(@event)
+    @edit = edit_event_path(@event) if can? :edit, @event
+    @new = new_event_path(@event) if can? :create, Event
   end
 
   # GET /events/new
@@ -53,6 +54,19 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def signup
+    if current_user.nil? || current_user.id.nil?
+      @event.add_email(params[:email])
+      # guest user
+    else
+      # reg user
+      @event.add_email(current_user.email)
+    end
+    flash[:notice] = 'Signed up!'
+
+    redirect_to @event
   end
 
   private

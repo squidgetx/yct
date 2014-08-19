@@ -7,6 +7,7 @@ class Ability
       can :read, Post
       can :read, Climber
       can :read, Event
+      can :signup, Event, public_signup: true
       return
     end
     case user.role
@@ -21,6 +22,7 @@ class Ability
         can :read, Event
         can :edit, Post, climber_id: user.id
         can :edit, Climber, id: user.id
+        can :signup, @event
     end
   end
 end

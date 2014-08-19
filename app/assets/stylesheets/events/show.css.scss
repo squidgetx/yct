@@ -1,5 +1,11 @@
-.signup {
+#signup {
   font-size: 3em;
   @include heading;
   margin-top: .5em;
+  margin-left: 0
+}
+.signup_field {
+  display: block;
+  margin: auto;
+  padding: 1em;
 }

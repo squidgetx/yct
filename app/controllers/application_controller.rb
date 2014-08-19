@@ -19,7 +19,10 @@ class ApplicationController < ActionController::Base
       return Climber.guest
     end
     @current_user
+  end
 
+  def member?
+    current_user.nil? || current_user.id.nil?
   end
 
   def search

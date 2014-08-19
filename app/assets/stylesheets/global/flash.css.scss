@@ -1,7 +1,13 @@
+$green: rgba(61,255,0,.6);
+
 #flashes {
-  background-color: rgba(61,255,50,0.5);
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  background-color: $green;
+  border: solid 1px darken($green, 10%);
   border-radius: 0.1em;
-  padding: 0.8em;
+  padding: 1em;
   margin: 1em;
   color: $textColor;
 

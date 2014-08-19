@@ -4,8 +4,15 @@
   h4
     = @event.get_range
 #content
-  - if @event.signup
-    a.btn.signup href='#'
-      | Sign Up
+  - if can? :signup, @event
+    =  form_tag signup_event_path(@event), method: 'get' do
+      - # setting the form to use get is a hack to allow
+      - # requests to pass through the rubycas gateway filter
+      - # which for some reason converts all requests to get
+      - # for non logged in users
+      - if current_user.nil? || current_user.id.nil?
+        = text_field_tag :email,"", class: 'signup_field', placeholder: 'Enter your email!'
+      br
+      = submit_tag "Signup", id:'signup'
   p
     = @event.description
