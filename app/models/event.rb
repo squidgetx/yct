@@ -2,7 +2,8 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :climbers
   has_many :photos
 
-  has_attached_file :cover, styles: {splash: '960x960', thumb: '256x256'}, default_url: "images/:style/missing.png"
+  has_attached_file :cover, styles: {splash: '960x960', thumb: '256x256'}, default_url: ActionController::Base.helpers.asset_path('missing_event.jpg')
+
 
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
   validates :name, :start_date, :end_date, presence: true
