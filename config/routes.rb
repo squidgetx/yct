@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :app_configs
 
   get 'static_pages/donate', path: :donate
   get 'static_pages/settings', path: :settings
@@ -32,6 +31,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :app_configs, only: [:edit, :update]
   resources :pending_climbers, only: [:new, :create]
   resources :faqs, except: [:show]
 
