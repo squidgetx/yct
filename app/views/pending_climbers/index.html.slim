@@ -20,6 +20,6 @@
           td
             = p.role
           td
-            = p.token
+            = truncate p.token, 4
           td.widget
             = link_to icon('fa fa-times'), p, method: :delete, data: { confirm: 'Delete Invitation: Are you sure?' }
