@@ -33,3 +33,8 @@ ul {
   text-transform: uppercase;
 }
 
+@mixin heading-sc {
+  font-family: 'bebas_neueregular';
+  font-variant: small-caps;
+}
+

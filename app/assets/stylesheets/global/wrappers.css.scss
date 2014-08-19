@@ -27,7 +27,7 @@ body {
 }
 
 #header_container {
-  font-family: 'bebas_neueregular';
+  @include heading-sc;
   position: fixed;
   top: 0;
   color: #111;
