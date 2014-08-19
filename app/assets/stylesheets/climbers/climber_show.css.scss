@@ -1,7 +1,22 @@
-.climber-img {
-  display: inline-block;
+.row {
+  width: 100%;
+  position: relative;
+  display: block;
+
 }
 
-.pull-left {
+.climber-img {
   display: inline-block;
+  float: left;
+}
+
+.climber-info {
+  padding: 1em;
+  display: inline-block;
+  text-align: left;
+  float: left;
+}
+
+.climber-desc {
+  display: block;
 }

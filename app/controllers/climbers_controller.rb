@@ -2,7 +2,7 @@ class ClimbersController < ApplicationController
   before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit]
   include ActionView::Helpers::AssetUrlHelper
   before_action :find_climber, only: [:show, :edit, :destroy, :update]
-  layout 'show', only: :show
+  layout 'front_page', only: :show
 
   def index
     @climbers = Climber.all
@@ -29,7 +29,6 @@ class ClimbersController < ApplicationController
     @climber = Climber.new
     @login = session[:cas_user]
     @can_edit_login = can? :create, Climber
-    binding.pry
   end
 
   def create

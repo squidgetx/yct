@@ -4,6 +4,8 @@
   = f.input :login, input_html: {value: @login, readonly: !@can_edit_login}
   = f.input :email
   = f.input :title, placeholder: 'Captain? President?'
+  = f.input :college
+  = f.input :year
   - if can? :change_role, :climber
     = f.input :role, as: :select, collection: ['normal','moderator','admin']
   - else
