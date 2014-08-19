@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   has_and_belongs_to_many :climbers
+  has_many :photos
 
   has_attached_file :cover, styles: {splash: '960x960', thumb: '256x256'}, default_url: "images/:style/missing.png"
 
@@ -45,7 +46,7 @@ class Event < ActiveRecord::Base
       return "#{start_date}"
     else
       # the event spans multiple days
-      return "#{start_date} #{start_time} - #{end_date} #{end_time}"
+      return "#{start_date} - #{end_date}"
     end
   end
 end

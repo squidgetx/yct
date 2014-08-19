@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819211636) do
+ActiveRecord::Schema.define(version: 20140819214333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140819211636) do
     t.boolean  "public_signup"
     t.boolean  "private",            default: false
     t.text     "emails"
+    t.integer  "photo_id"
   end
 
   create_table "faqs", force: true do |t|
