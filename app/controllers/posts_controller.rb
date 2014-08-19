@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.order('created_at ASC')
+    @posts = Post.view(current_user).order('created_at ASC')
     @new = new_post_path if can? :create, Post
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.required(:post).permit(:title, :text)
+    params.required(:post).permit(:title, :text, :private)
   end
 
 end

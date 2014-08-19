@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
   validates :name, :start_date, :end_date, presence: true
 
-  scope :public_face, lambda { where('private = false') }
+  scope :public_view, lambda { where('private = false') }
 
   def get_range
     # Return human readable string of the event time

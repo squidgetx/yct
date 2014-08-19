@@ -17,5 +17,10 @@
   = f.label 'Body'
   = f.text_area :text, class: 'markdown_text_area'
   br
+
+  = f.label 'Private'
+  = f.check_box :private
+  = f.hint "(Hide this post from non-logged in users)"
+
   .control-group
     = f.button :submit
