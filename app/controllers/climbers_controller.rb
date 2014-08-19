@@ -14,18 +14,22 @@ class ClimbersController < ApplicationController
 
   def show
     @edit = edit_climber_path @climber if can? :edit, @climber
-    @new = new_pending_climber_path if can? :invite, Climber
+    if @appconfig.restrict_new_accounts
+      @new = new_pending_climber_path if can? :invite, Climber
+    else
+      @new = new_climber_path
+    end
     @posts = Post.view(current_user).where("climber_id = ?", @climber.id)
   end
 
   def new
     @token = params[:token]
     pending = PendingClimber.where(token: @token)
-
-    raise CanCan::AccessDenied if (cannot? :create, Climber) && pending.empty?
+    if @appconfig.restrict_new_accounts
+      raise CanCan::AccessDenied if (cannot? :create, Climber) && pending.empty?
+    end
     # new users are allowed if they have a valid token or if they have
     # permission
-    #@email = pending.first.email unless pending.empty?
     @role = pending.empty? ? "normal" : pending.first.role
     @climber = Climber.new
     @login = session[:cas_user]
@@ -42,7 +46,6 @@ class ClimbersController < ApplicationController
       flash[:notice] = 'Account successfully created!'
       redirect_to(@climber)
     else
-      #@email = pending.first.email unless pending.empty?
       @role = pending.empty? ? "normal" : pending.first.role
       @login = session[:cas_user]
       @can_edit_login = can? :create, Climber
