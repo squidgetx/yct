@@ -1,15 +1,17 @@
 #header_container
   h2
     | Invite
-#content
+
+= simple_form_for @pending_climber, remote: true, authenticity_token: true do |f|
   p.instruction
     | Here you can create single-use account generation urls linked to specific roles. Unfortunately your server is not configured to send emails, so you will need to copy-paste the url and send it to members that you would like to invite.
-  br
 
-  = simple_form_for @pending_climber, remote: true, authenticity_token: true do |f|
-    = f.select :role, ['normal', 'moderator', 'admin']
-    = f.button :submit, 'Generate URL'
 
-  .emails
-    = @url
+  = f.text_field :email, placeholder: 'Email address'
+  = f.hint 'Associate an email address with this invitation for easier recordkeeping'
+  = f.input :role, as: :select, collection: ['normal', 'moderator', 'admin']
+  = f.button :submit, 'Generate URL'
+
+.emails
+  = @url
 

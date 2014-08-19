@@ -1,5 +1,5 @@
 = simple_form_for @post do |f|
-  = f.input :title
+  = f.text_field :title, placeholder: 'Title'
   #toolbar
     ul.toolbar
       li.italics.tooltip title="Italics"
@@ -14,7 +14,6 @@
         li.help.tooltip title="Help"
           = icon('fa fa-question fa-lg')
 
-  = f.label 'Body'
   = f.text_area :text, class: 'markdown_text_area'
   br
 

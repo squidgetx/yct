@@ -2,7 +2,7 @@
   = f.error_notification
   = f.input :name, placeholder: 'Adam Ondra'
   = f.input :login, input_html: {value: @login, disabled: !@can_edit_login}
-  = f.input :email#, input_html: {value: @email}
+  = f.input :email
   = f.input :title, placeholder: 'Captain? President?'
   - if can? :change_role, :climber
     = f.input :role, as: :select, collection: ['normal','moderator','admin']
@@ -14,5 +14,4 @@
   = f.label 'Avatar'
   = f.file_field :avatar
 
-  br
   = f.button :submit, 'Save!'

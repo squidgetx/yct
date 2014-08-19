@@ -1,9 +1,29 @@
+input, textarea {
+  @include animate(.3s);
+  border: 0;
+  color: #222;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.1);
+  padding: .5em;
+  margin-left: 1em;
+}
+
+input:focus, textarea:focus {
+  background-color: rgba(0,0,0,0.05);
+}
+
+form.simple_form {
+  margin-left: 4em;
+  width: 600px;
+
+}
+
 .control-label {
-  display: inline-block;
-  text-align: right;
-  width: 10em;
+  display: block;
   font-weight: 600;
   font-size: .8em;
+  padding: .5em;
+  padding-left: 0;
 }
 
 span.error {
@@ -12,16 +32,14 @@ span.error {
 }
 
 span.hint {
+  display: block;
   font-size: .8em;
-  margin-left: 1em;
+  padding: .5em 0 1em 0;
 }
 
-input[type=submit] {
-  margin-left: 7em;
-}
 
 input[type=submit], .btn {
-  display: inline-block;
+  display: block;
   background-color: $linkColor;
   color: $menuTextColor;
   margin-top: 1em;
@@ -37,5 +55,6 @@ input[type=submit]:hover, .btn:hover{
 }
 
 .btn {
-  margin-left: 1em;
+  margin-right: 1em;
 }
+
