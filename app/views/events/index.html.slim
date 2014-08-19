@@ -5,7 +5,7 @@
 .tiles
   - if @events.empty?
     #content
-      h4
+      p
         | No events found!
   - else
     = render partial: 'event_card', collection: @events

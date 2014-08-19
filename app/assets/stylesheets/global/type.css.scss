@@ -13,3 +13,41 @@
 body {
   color: $textColor;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  color: $headingColor;
+  @include heading-sc;
+  font-weight: normal;
+  margin: 0;
+  margin-top: .5em;
+  margin-bottom: .2em;
+}
+
+h4,h5,h6 {
+  color: darken($headingColor, 50%);
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.17em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.83em;
+}
+

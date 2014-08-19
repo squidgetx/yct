@@ -15,6 +15,7 @@ class ClimbersController < ApplicationController
   def show
     @edit = edit_climber_path @climber if can? :edit, @climber
     @new = new_pending_climber_path if can? :invite, Climber
+    @posts = Post.view(current_user).where("climber_id = ?", @climber.id)
   end
 
   def new

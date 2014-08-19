@@ -1,18 +1,26 @@
 #content
-  .row
-    .climber-img
-      = image_tag @climber.avatar.url(:medium)
+  #profile
+    = content_tag :div, class: 'climber-img', style: "background-image: url('#{@climber.avatar.url(:medium)}')" do
+      h2.climber-name
+          = @climber.name
     .climber-info
-      h2
-        = @climber.name
       h3
         = @climber.title
       h3
         = "#{@climber.college} #{@climber.year}"
       h3
         = @climber.email
-
-  .climber-desc
-    p
-      = @climber.desc
+      - if can? :manage, @climber
+        h3
+          = @climber.login
+        h3
+          = @climber.role
+      p
+        = @climber.desc
+  .climber-activity
+    - @posts.each do |p|
+      span.timestamp
+        = "#{p.created_at.to_s(:long)}"
+      span
+        = "#{@climber.first_name} wrote #{link_to p.title, post_path(p)}".html_safe
 
