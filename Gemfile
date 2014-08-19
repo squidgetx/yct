@@ -26,6 +26,7 @@ gem 'rubycas-client', :git => "https://github.com/rubycas/rubycas-client"
 gem 'cancancan'
 gem 'kramdown'
 gem 'textacular'
+gem 'aws-sdk'
 
 gem 'simple_form'
 gem 'slim'
