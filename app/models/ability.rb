@@ -7,7 +7,10 @@ class Ability
       can :read, Post
       can :read, Climber
       can :read, Event
-      can :signup, Event, public_signup: true
+      can :signup, Event do |event|
+        public_signup &&
+          event.start_date.to_date <= Date.current
+      end
       return
     end
     case user.role
@@ -22,7 +25,9 @@ class Ability
         can :read, Event
         can :edit, Post, climber_id: user.id
         can :edit, Climber, id: user.id
-        can :signup, @event
+        can :signup, Event do |event|
+          event.start_date.to_date <= Date.current
+        end
     end
   end
 end
