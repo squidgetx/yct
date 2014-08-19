@@ -1,0 +1,25 @@
+#header_container
+  h2
+    | Listing Pending Users
+#content
+  table
+    thead
+      tr
+        th
+          | Email
+        th
+          | Role
+        th
+          | Token
+        th
+    tbody
+      - @pendings.each do |p|
+        tr
+          td
+            = p.email
+          td
+            = p.role
+          td
+            = p.token
+          td.widget
+            = link_to icon('fa fa-times'), p, method: :delete, data: { confirm: 'Delete Invitation: Are you sure?' }

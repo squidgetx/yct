@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   resources :app_configs, only: [:update]
   get '/app_configs' => 'app_configs#edit', as: :edit_app_configs
-  resources :pending_climbers, only: [:new, :create]
+  resources :pending_climbers, only: [:new, :create, :index, :destroy]
   resources :faqs, except: [:show]
 
   # Example resource route with options:
