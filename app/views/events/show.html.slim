@@ -12,7 +12,7 @@
       - if current_user.nil? || current_user.id.nil?
         = text_field_tag :email,"", class: 'signup_field', placeholder: 'Enter your email!'
       = submit_tag "Signup", id:'signup'
-  - elsif current_user.signedup?(@event)
+  - elsif member? && current_user.signedup?(@event)
       = form_tag signdown_event_path(@event), method: 'get' do
         = submit_tag "Signed Up", id: 'signup', title: 'Click to un-sign-up'
   .maskw
@@ -21,6 +21,7 @@
 #content
   p
     = @event.description
-  h2
-    = "#{@event.num_signed_up} signed up"
+  - if @event.signup
+    h2
+      = "#{@event.num_signed_up} signed up"
 
