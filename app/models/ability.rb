@@ -8,7 +8,7 @@ class Ability
       can :read, Climber
       can :read, Event
       can :signup, Event do |event|
-        public_signup &&
+        event.public_signup &&
           event.start_date.to_date <= Date.current
       end
       return
