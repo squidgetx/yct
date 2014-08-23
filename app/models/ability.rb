@@ -33,6 +33,7 @@ class Ability
         can :read, Event
         can :edit, Post, climber_id: user.id
         can :edit, Climber, id: user.id
+        can :update, Climber, id: user.id
         can :signup, Event do |event|
           event.start_date.to_date <= Date.current &&
             event.signup &&

@@ -61,12 +61,20 @@ class ClimbersController < ApplicationController
 
   def edit
     @login = @climber.login
+    @role = @climber.role
     @can_edit_login = can? :create, Climber
   end
 
   def update
-    Climber.update(@climber.id, climb_params)
-    redirect_to @climber
+    if @climber.update_attributes(climb_params)
+      flash[:notice] = 'Profile updated'
+      redirect_to @climber
+    else
+      @login = @climber.login
+      @role = @climber.role
+      @can_edit_login = can? :create, Climber
+      render :edit
+    end
   end
 
   def destroy
