@@ -23,6 +23,9 @@ Rails.application.configure do
     }
   }
 
+  Paperclip::Attachment.default_options[:url] = 'yct.s3.amazonaws.com'
+  Paperclip::Attachment.default_options[:path] = '/:class/:attachment/:id_partition/:style/:filename'
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
