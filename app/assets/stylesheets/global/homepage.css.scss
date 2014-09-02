@@ -6,7 +6,7 @@ $pageColor: rgba(255,255,255,0.9);
   overflow: hidden;
   position: fixed;
   left: 0;
-  top: 0px;
+  top: 0;
   width: 100%;
   height: 100vh;
 }
@@ -99,6 +99,7 @@ $pageColor: rgba(255,255,255,0.9);
 }
 
 .page {
+  box-sizing: border-box;
   width: 100%;
   background-color: $pageColor;
   padding: 1em;
@@ -110,6 +111,11 @@ $pageColor: rgba(255,255,255,0.9);
   margin: 0;
 }
 
-.answer {
+p.answer {
   margin-left: 2em;
+  width: 69%;
+}
+p.about {
+  margin-left: 2em;
+  width: 80%;
 }
