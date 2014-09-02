@@ -24,7 +24,7 @@
   #photos
     = f.simple_fields_for :photos do |photo|
       = render 'photo_fields', f: photo
-      .links
-        = link_to_add_association 'Add Photo', f, :photos
+    .links
+      = link_to_add_association 'Add Photo', f, :photos
 
   = f.button :submit, 'Save Event'
