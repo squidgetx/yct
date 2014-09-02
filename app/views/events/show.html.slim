@@ -17,7 +17,7 @@
         = submit_tag "Signed Up", id: 'signup', title: 'Click to un-sign-up'
   .maskw
 .tiles
-    = render partial: 'climbers/climber_card', collection: @event.climbers
+  = render partial: 'photos/photo_card', collection: @event.photos
 #content
   p
     = @event.description
