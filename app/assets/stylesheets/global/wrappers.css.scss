@@ -4,19 +4,18 @@ body {
 }
 
 #wrapper {
-  position: absolute;
-  left: 0;
-  top: $coverHeight;
+  position: relative;
   width: 100%;
 }
 
 #wrapper.splash {
+  position: absolute;
   top: 100vh;
   z-index: 29;
 }
 
 #wrapper.show {
-  top: $largeCoverHeight;
+  //height: $largeCoverHeight;
 }
 
 #content {
@@ -30,12 +29,12 @@ body {
 
 #header_container {
   @include heading-sc;
-  position: fixed;
-  top: 0;
   font-size: 5em;
   width: 100%;
   margin: auto;
   text-align: center;
+  position: relative;
+  padding-bottom: .5em;
 }
 
 #header_container h2, #header_container h4, #header_container h6, #header_container h5 {

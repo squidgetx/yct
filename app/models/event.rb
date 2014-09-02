@@ -2,6 +2,8 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :climbers
   has_many :photos
 
+  accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
+
   has_attached_file :cover, styles: {splash: '960x960', thumb: '256x256'}, default_url: ActionController::Base.helpers.asset_path('missing_event.jpg')
 
 

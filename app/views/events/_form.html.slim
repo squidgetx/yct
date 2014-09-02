@@ -7,6 +7,8 @@
   = f.label 'Cover Photo'
   = f.file_field :cover
 
+
+  
   = f.label 'Sign Ups'
   = f.check_box :signup
   = f.hint "(Allow logged in users to sign up for this event)"
@@ -18,4 +20,11 @@
   = f.label 'Private'
   = f.check_box :private
   = f.hint "(Hide this event from non-logged in users)"
+
+  #photos
+    = f.simple_fields_for :photos do |photo|
+      = render 'photo_fields', f: photo
+      .links
+        = link_to_add_association 'Add Photo', f, :photos
+
   = f.button :submit, 'Save Event'
