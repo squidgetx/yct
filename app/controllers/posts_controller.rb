@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.view(current_user).order('created_at ASC')
+    @posts = Post.view(current_user).order('created_at DESC')
     @new = new_post_path if can? :create, Post
   end
 
