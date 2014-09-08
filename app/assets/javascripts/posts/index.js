@@ -3,6 +3,10 @@ function truncate() {
     height: null,
     watch: 'window'
   });
+  $('.card_heading').dotdotdot({
+    height: null,
+    watch: 'window'
+  });
 }
 
 $(document).ready(function() {

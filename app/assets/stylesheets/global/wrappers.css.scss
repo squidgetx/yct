@@ -18,6 +18,11 @@ body {
   //height: $largeCoverHeight;
 }
 
+#post_wrapper {
+  text-align: left;
+
+}
+
 #content {
   padding-top: 2em;
   position: relative;
@@ -34,7 +39,6 @@ body {
   margin: auto;
   text-align: center;
   position: relative;
-  padding-bottom: .5em;
 }
 
 #header_container h2, #header_container h4, #header_container h6, #header_container h5 {
@@ -45,6 +49,7 @@ body {
 
 #header_container.bg {
   background-size: cover;
+  padding-bottom: .5em;
 }
 
 #header_container.bg h2, #header_container.bg h4, #header_container.bg h6, #header_container.bg h5 {

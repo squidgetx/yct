@@ -19,7 +19,7 @@
 }
 
 .card a {
-  line-height: 2em;
+  line-height: 1.3em;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -34,11 +34,14 @@
   width: 12.5%;
 }
 
+.card_heading {
+  line-height: 1.3em;
+}
+
 .card.post_card {
   height: 18em;
   width: 50%;
   overflow: hidden;
-  line-height: 1.4em;
   background-color: darken($bodyBackground, 10%);
   @include animate(.3s);
 }
