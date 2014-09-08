@@ -1,8 +1,8 @@
-h4
- | Search Results
-p
-  = "#{@climbers.count} climbers found"
-p
-  = "#{@posts.count} posts found"
-p
-  = "#{@events.count} events found"
+#header_container
+     | Search results
+.tiles
+  = render partial: 'climbers/climber_card', collection: @climbers
+.tiles
+  = render partial: 'posts/post_card', collection: @posts
+.tiles
+  = render partial: 'events/event_card', collection: @events
