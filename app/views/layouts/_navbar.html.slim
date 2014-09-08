@@ -9,7 +9,7 @@
     li
       = link_to @appconfig.member_name.pluralize, climbers_path
     li
-      = link_to 'FAQ', root_path+'#faq'
+      = link_to 'FAQ', root_path+'home#faq'
     li
       = link_to 'Support', '/donate/'
     - if can? :manage, :settings
