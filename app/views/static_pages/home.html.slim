@@ -12,10 +12,8 @@
     - count += 1
 
 #wrapper.splash
-  .splash_title
-    | About
-  .page
-    p.about
+  .about_wrapper
+    .about_content
       = markdown @appconfig.about
 
   .splash_title
