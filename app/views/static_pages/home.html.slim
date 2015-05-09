@@ -16,16 +16,14 @@
     .about_content
       = markdown @appconfig.about
 
-  .splash_title
-    = link_to 'Recent News', posts_path
-  .tiles
+  br
+  .page
+    .splash_title
+      = link_to 'Recent News', posts_path
     = render partial: 'posts/post_card', collection: @posts
-  .splash_title#faq
-    | CR1T1C4L 1NF0
-  .page
+    .splash_title#faq
+      | FAQ
     = render partial: 'faqs/faq_card', collection: @faqs
-
-  .page
     p
       This site is powered by Ruby on Rails and dotdotdot.js. To report a bug, comment, or contribute, check out the <a href="https://github.com/squidgetx/yct">github</a>
 

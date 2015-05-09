@@ -20,6 +20,8 @@ body {
 
 #post_wrapper {
   text-align: left;
+  width: 580px;
+  margin: auto;
 
 }
 
@@ -58,19 +60,21 @@ body {
 
 .splash_title {
   position: relative;
+  margin-left: 1em;
+  margin-top: .5em;
   font-family: 'bebas_neueregular';
   font-size: 6em;
   width: 100%;
-  color: #eee;
+  color: #555;
 }
 
 .splash_title a {
-  color: #eee;
+  color: #888;
   @include animate(.5s);
 }
 
 .splash_title a:hover {
-  color: #bdf;
+  text-decoration: underline;
 }
 
 .maskw {

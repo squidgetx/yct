@@ -36,48 +36,36 @@
 
 .card_heading {
   line-height: 1.3em;
+  color: black;
 }
 
 .card.post_card {
-  height: 18em;
-  width: 50%;
+  width: 580px;
+  margin: auto;
+  display: block;
   overflow: hidden;
-  background-color: darken($bodyBackground, 10%);
+  //background-color: darken($bodyBackground, 10%);
   @include animate(.3s);
 }
 
 .card.post_card:hover {
-  background-color: lighten(desaturate($yaleBlue,50%),70%);
 //  lighten($bodyBackground, 10%);
+text-decoration: underline
 }
 
 .heading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  text-align: center;
   font-size: 2.5em;
   overflow: hidden;
-  color: #eee;
   font-family: 'bebas_neueregular'
 }
 
 .heading h2 {
-  color: #eee;
 }
 
 .card_content {
   box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 100%;
-  width: 50%;
-  padding: 2em;
-  text-align: center;
-  color: rgba(0,0,0,0.7);
+  text-align: right;
+  //color: rgba(0,0,0,0.7);
 }
 
 .text_wrapper {

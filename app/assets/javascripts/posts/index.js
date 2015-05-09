@@ -11,7 +11,7 @@ function truncate() {
 
 $(document).ready(function() {
 
-  $('.card_content').each(function(index) {
+/*  $('.card_content').each(function(index) {
       var color = 'rgba(0,0,0,' + (Math.random()/4).toString() + ')'
       $(this).css('background-color', color);
   });
@@ -20,8 +20,10 @@ $(document).ready(function() {
       var color = 'rgba(0,0,0,' + (.9 - Math.random()/4).toString() + ')'
       $(this).css('background-color', color);
   });
+  */
 
-  truncate();
+  //truncate();
+
 
 
 });

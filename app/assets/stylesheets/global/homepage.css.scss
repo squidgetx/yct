@@ -1,5 +1,5 @@
 $overlayColor: rgba(0,0,0,0.3);
-$pageColor: rgba(255,255,255,0.9);
+$pageColor: rgb(254,254,254);
 
 
 #slides {
@@ -108,12 +108,16 @@ $pageColor: rgba(255,255,255,0.9);
 .question {
   font-family: 'bebas_neueregular';
   font-size: 5em;
-  margin: 0;
+  margin: auto;
+  padding: 1em;
+  width: 580px;
 }
 
 p.answer {
-  margin-left: 2em;
-  width: 69%;
+  margin: auto;
+  width: 580px;
+  font-size: 14pt;
+  font-weight: 100;
 }
 p.about {
   margin-left: 2em;
