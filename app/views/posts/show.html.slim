@@ -1,8 +1,8 @@
 #header_container
-  h2
+  h3
     = @post.title
 #content
-  h4
+  h3
     == "Posted by #{link_to @post.climber.name, climber_path(@post.climber)} on #{@post.created_at.to_date.to_s(:long)}"
   #post_wrapper
     = markdown @post.text
