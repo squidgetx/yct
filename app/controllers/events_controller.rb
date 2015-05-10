@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all
+    @events = Event.all.order('start_date DESC');
     @new = new_event_path(@event) if can? :create, Event
   end
 
