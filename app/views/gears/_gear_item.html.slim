@@ -1,6 +1,11 @@
-p
-  = gear_item.gear_type.name
-  = gear_item.quantity
-  = gear_item.description
-  = button_to "Delete", gear_path(gear_item), method: :delete
+.gear_item
+  h2
+    = "#{gear_item.gear_type.name} x#{gear_item.quantity}"
+  p
+    = gear_item.description
+  ul
+    li.widget.mini
+      = link_to icon("fa fa-times"), gear_path(gear_item), method: :delete
+    li.widget.mini
+      = link_to icon("fa fa-pencil"), edit_gear_path(gear_item)
 
