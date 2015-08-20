@@ -1,0 +1,50 @@
+.tabs-menu {
+    height: 30px;
+    float: left;
+}
+
+.tab-menu-container {
+  display: block;
+  height: 30px;
+}
+
+.tabs-menu li {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 10px;
+    background-color: #ccc;
+}
+
+.tabs-menu li.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
+
+.tabs-menu li a {
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none; 
+    outline: none;
+}
+
+.tabs-menu .current a {
+    color: #2e7da3;
+}
+
+.tab {
+    width: auto;
+    background-color: white;
+    display: block;
+}
+
+.tab-content {
+    width: 100%;
+    padding: 20px;
+    padding-top: 30px;
+    display: none;
+}
+
