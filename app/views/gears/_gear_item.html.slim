@@ -1,6 +1,8 @@
 .gear_item
   h2
-    = "#{gear_item.gear_type.name} x#{gear_item.quantity}"
+    = "#{gear_item.name} x#{gear_item.quantity}"
+  h3.subtitle
+    = gear_item.gear_type.name
   p
     = gear_item.description
   ul
