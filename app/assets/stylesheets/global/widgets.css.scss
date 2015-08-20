@@ -1,5 +1,9 @@
 $widgetColor: rgba(0,0,0,0.3);
 
+.mini {
+  display: inline-block !important;
+}
+
 .widget {
   box-sizing: border-box;
   color: $menuTextColor;

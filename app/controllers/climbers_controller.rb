@@ -25,6 +25,7 @@ class ClimbersController < ApplicationController
     end
     @delete = @climber if can? :destroy, @climber
     @posts = Post.view(current_user).where("climber_id = ?", @climber.id)
+    @gear = Gear.where("climber_id = ?", @climber.id)
     @index = climbers_path
   end
 

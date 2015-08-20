@@ -18,6 +18,21 @@
       p
         = @climber.desc
   .climber-activity
-    .tiles
-      = render partial: 'events/event_card', collection: @climber.events
+    .tabs
+      .tab-menu-container
+        ul.tabs-menu
+          li.current
+            a href = '#recent-activity'
+              | Recent Activity
+          li
+            a href = '#gear'
+              | Gear
+      .tab
+        #recent-activity.tab-content
+          = render partial: 'events/event_card', collection: @climber.events
+        #gear.tab-content
+          - binding.pry
+          - if (can? :manage, :all) || (current_user == @climber)
+            = button_to('Add Gear', new_gear_path, method: :get)
+          = render partial: 'gears/gear_item', collection: @gear
 
