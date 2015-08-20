@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def check_app_config
     if AppConfig.count == 0
-      render layout: 'noappconfig'
+      render 'layouts/noappconfig', layout: 'noappconfig'
     end
     @appconfig = AppConfig.first
   end
