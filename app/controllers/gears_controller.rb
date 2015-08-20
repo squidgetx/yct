@@ -42,7 +42,7 @@ class GearsController < ApplicationController
 
   def destroy
     @gear.destroy
-    redirect_to action: 'index'
+    redirect_to request.referer
   end
 
   private
