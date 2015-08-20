@@ -23,4 +23,5 @@ class Climber < ActiveRecord::Base
   def first_name
     self.name.split(' ').first
   end
+
 end

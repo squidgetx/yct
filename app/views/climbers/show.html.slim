@@ -31,6 +31,7 @@
         #recent-activity.tab-content
           = render partial: 'events/event_card', collection: @climber.events
         #gear.tab-content
-          = button_to('Add Gear', new_gear_path, method: :get)
+          - if (can? :manage, Gear) || (current_user == @climber)
+            = button_to('Add Gear', new_gear_path, method: :get)
           = render partial: 'gears/gear_item', collection: @gear
 

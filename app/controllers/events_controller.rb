@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit]
+  before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit, :create, :update, :destroy, :signup, :signdown]
   before_action :set_event, only: [:show, :edit, :update, :destroy, :signup, :signdown]
   layout 'show', only: :show
 

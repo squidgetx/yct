@@ -5,9 +5,10 @@
     = gear_item.gear_type.name
   p
     = gear_item.description
-  ul
-    li.widget.mini
-      = link_to icon("fa fa-times"), gear_path(gear_item), method: :delete
-    li.widget.mini
-      = link_to icon("fa fa-pencil"), edit_gear_path(gear_item)
+  - if can? :manage, gear_item
+    ul
+      li.widget.mini
+        = link_to icon("fa fa-times"), gear_path(gear_item), method: :delete
+      li.widget.mini
+        = link_to icon("fa fa-pencil"), edit_gear_path(gear_item)
 

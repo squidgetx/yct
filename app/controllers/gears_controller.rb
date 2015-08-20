@@ -1,5 +1,6 @@
 class GearsController < ApplicationController
-  
+  before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit, :create, :update, :destroy]
+  load_and_authorize_resource
   before_action :find_gear, only: [:edit, :destroy, :update]
 
   def new
@@ -8,7 +9,7 @@ class GearsController < ApplicationController
 
   def create
     p = gear_params
-    p[:climber_id] = current_user.id
+    p[:climber_id] ||= current_user.id
     # check if climber already has this type of gear
     #gear = current_user.gears
     # gear.each do |g| 
@@ -51,7 +52,7 @@ class GearsController < ApplicationController
   end
 
   def gear_params
-    params.required(:gear).permit(:name, :description, :quantity, :gear_type_id)
+    params.required(:gear).permit(:name, :description, :quantity, :gear_type_id, :climber_id)
   end
 
 end
