@@ -2,5 +2,6 @@
   h2
     = @appconfig.climbers_header
 .tiles
+  = render partial: 'climber_card', collection: @GC
   = render partial: 'climber_card', collection: @climbers
 

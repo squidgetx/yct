@@ -5,7 +5,8 @@ class ClimbersController < ApplicationController
   layout 'front_page', only: :show
 
   def index
-    @climbers = Climber.all
+    @GC = Climber.where("role = ? OR role = ?",'admin','moderator')
+    @climbers = Climber.where("role = ?", "normal")
     if session[:cas_user]
       @user = session[:cas_user]
     end
