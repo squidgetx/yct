@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :climbers
   resources :posts
+  resources :gears
+  resources :gear_types
+  resources :loans
   resources :events do
     member do
       get 'signup'
