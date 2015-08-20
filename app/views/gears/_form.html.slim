@@ -1,0 +1,7 @@
+= simple_form_for(@gear) do |f|
+  = f.error_notification
+  = f.input :gear_type_id, collection: GearType.all
+  = f.input :description
+  = f.input :quantity
+  = f.button :submit, 'Save'
+

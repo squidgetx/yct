@@ -1,15 +1,16 @@
-class GearController < ApplicationController
+class GearsController < ApplicationController
   
   before_action :find_gear, only: [:edit, :destroy, :update]
 
   def new
+    @gear = Gear.new
   end
 
   def create
     p = gear_params
     p[:climber_id] = current_user.id
     @gear = Gear.create(p)
-    redirect_to(@gear)
+    redirect_to(current_user)
   end
 
   def edit
@@ -32,7 +33,7 @@ class GearController < ApplicationController
   end
 
   def gear_params
-    params.required(:gear).permit(:description, :quantity)
+    params.required(:gear).permit(:description, :quantity, :gear_type_id)
   end
 
 end
