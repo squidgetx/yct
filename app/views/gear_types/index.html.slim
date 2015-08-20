@@ -1,0 +1,13 @@
+#header_container
+  h2
+    | Gear Types
+#content
+  - @gear_types.each do |gt|
+    h2
+      = gt.name
+    ul
+      li.widget.mini
+        = link_to icon("fa fa-times"), gear_type_path(gt), method: :delete
+      li.widget.mini
+        = link_to icon("fa fa-pencil"), edit_gear_type_path(gt)
+
