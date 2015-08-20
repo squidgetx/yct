@@ -26,7 +26,7 @@ class GearTypesController < ApplicationController
 
   def update
     GearType.update(@gear_type.id, gear_params)
-    redirect_to(@gear_type)
+    redirect_to(gear_types_path)
   end
 
   def destroy
