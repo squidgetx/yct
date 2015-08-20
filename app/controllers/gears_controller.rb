@@ -9,8 +9,27 @@ class GearsController < ApplicationController
   def create
     p = gear_params
     p[:climber_id] = current_user.id
-    @gear = Gear.create(p)
-    redirect_to(current_user)
+    # check if climber already has this type of gear
+    gear = current_user.gears
+    binding.pry
+    gear.each do |g| 
+      if g.gear_type_id == p[:gear_type_id].to_i
+        g.quantity += p[:quantity].to_i
+        if g.description.nil?
+          g.description = p[:description]
+        elsif p[:description].present?
+          g.description += p[:description]
+        end
+        @gear = g
+        break
+      end
+    end
+    @gear ||= Gear.new(p)
+    if @gear.save
+      redirect_to(current_user, notice: 'Gear successfully updated')
+    else
+      render :new
+    end
   end
 
   def edit
