@@ -1,5 +1,7 @@
 class Climber < ActiveRecord::Base
   has_many :posts
+  has_many :gears
+  has_many :loans
   has_and_belongs_to_many :photos
   has_and_belongs_to_many :events
   has_attached_file :avatar, styles: { medium: "300x300>"}, default_url: ActionController::Base.helpers.asset_path('missing_climber.jpg')
