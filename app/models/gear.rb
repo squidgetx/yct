@@ -3,5 +3,5 @@ class Gear < ActiveRecord::Base
   belongs_to :climber
 
   validates :climber, :gear_type_id, :quantity, :name, presence: true
-  validates :quantity, numericality: { only_integer: true }
+  validates :quantity, numericality: { only_integer: true, greater_than: 0 }
 end

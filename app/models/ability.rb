@@ -31,6 +31,7 @@ class Ability
       when 'normal' || 'moderator'
         can [:read, :create], Post
         can :manage, Gear, climber_id: user.id
+        can :create, Gear
         can :read, Event
         can :edit, Post, climber_id: user.id
         can :edit, Climber, id: user.id

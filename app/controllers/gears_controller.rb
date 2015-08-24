@@ -1,6 +1,5 @@
 class GearsController < ApplicationController
   before_action CASClient::Frameworks::Rails::Filter, only: [:new, :edit, :create, :update, :destroy]
-  load_and_authorize_resource
   before_action :find_gear, only: [:edit, :destroy, :update]
 
   def new
