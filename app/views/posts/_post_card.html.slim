@@ -6,3 +6,5 @@
     .card_content
       .text_wrapper
         = post_card.created_at.to_date
+      .preview_wrapper
+        = markdown post_card.text

@@ -78,6 +78,14 @@ text-decoration: underline
   margin: 0;
 }
 
+.preview_wrapper {
+  margin: auto;
+  text-align: left;
+  height: 8em;
+  padding: 1em;
+  overflow: hidden;
+}
+
 .heading_container.climber_card {
   height: 100%;
   width: 100%;

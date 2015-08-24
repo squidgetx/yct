@@ -1,9 +1,5 @@
 function truncate() {
-  $('.card_content').dotdotdot({
-    height: null,
-    watch: 'window'
-  });
-  $('.card_heading').dotdotdot({
+  $('.preview_wrapper').dotdotdot({
     height: null,
     watch: 'window'
   });
@@ -22,7 +18,8 @@ $(document).ready(function() {
   });
   */
 
-  //truncate();
+  truncate();
+  console.log("test");
 
 
 
