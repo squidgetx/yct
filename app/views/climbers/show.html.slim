@@ -9,7 +9,8 @@
       h3
         = "#{@climber.college} #{@climber.year}"
       h3
-        = @climber.email
+        a href = "mailto: #{@climber.email}"
+          = @climber.email
       - if can? :manage, @climber
         h3
           = @climber.login
